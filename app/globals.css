@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0b;
+  --foreground: #e1e1e1;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: #0a0a0b;
+  color: #e1e1e1;
+  font-family: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Glassmorphic card style */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, #ff6a00 0%, #ff3d00 50%, #ffaa00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effects */
+.glow-orange {
+  box-shadow: 0 0 40px rgba(255, 106, 0, 0.15), 0 0 80px rgba(255, 106, 0, 0.05);
+}
+
+.glow-text {
+  text-shadow: 0 0 40px rgba(255, 106, 0, 0.3);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Stat counter animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Pill button style */
+.pill-button {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  padding: 0.625rem 1.5rem;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.pill-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.pill-button-primary {
+  border: 1px solid rgba(255, 106, 0, 0.3);
+  border-radius: 9999px;
+  padding: 0.625rem 1.5rem;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 106, 0, 0.15);
+  color: #ff8c3a;
+}
+
+.pill-button-primary:hover {
+  background: rgba(255, 106, 0, 0.25);
+  border-color: rgba(255, 106, 0, 0.5);
+}
+
+/* Focus-visible for keyboard accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid rgba(255, 106, 0, 0.7);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.pill-button:focus-visible,
+.pill-button-primary:focus-visible {
+  outline: 2px solid rgba(255, 106, 0, 0.7);
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(255, 106, 0, 0.3);
+  color: #ffffff;
+}
+
+/* ===== Client Marquee ===== */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
