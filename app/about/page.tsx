@@ -35,13 +35,18 @@ export default function About() {
               Our Story
             </h2>
             <p className="text-gray-400 leading-relaxed mb-4 sm:mb-5 text-sm md:text-base">
-              Megokruto is a digital agency. That means we build stuff on the internet for businesses. Websites, apps, online stores, logos, social media, and security against hackers.
+              Megokruto is a digital agency. That means we build stuff on the
+              internet for businesses. Websites, apps, online stores, logos,
+              social media, and security against hackers.
             </p>
             <p className="text-gray-400 leading-relaxed mb-4 sm:mb-5 text-sm md:text-base">
-              You tell us what you need, and we do everything: we design it, build it, put it online, and help you grow. You don't need to talk to 5 different companies. We're your one stop.
+              You tell us what you need, and we do everything: we design it,
+              build it, put it online, and help you grow. You don't need to talk
+              to 5 different companies. We're your one stop.
             </p>
             <p className="text-gray-400 leading-relaxed text-sm md:text-base">
-              We've built things for the Dutch government, hospitals, banks, and gaming companies. We know what we're doing.
+              We've built things for the Dutch government, hospitals, banks, and
+              gaming companies. We know what we're doing.
             </p>
           </div>
 
@@ -66,8 +71,12 @@ export default function About() {
               { value: "99.9%", label: "Our stuff stays online" },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white">{stat.value}</div>
-                <div className="text-[10px] sm:text-xs md:text-sm text-gray-500 mt-1">{stat.label}</div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+                  {stat.value}
+                </div>
+                <div className="text-[10px] sm:text-xs md:text-sm text-gray-500 mt-1">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
@@ -86,10 +95,13 @@ export default function About() {
                 The person behind it all
               </h2>
               <p className="text-gray-400 leading-relaxed mb-3 sm:mb-4 text-sm md:text-base">
-                A software developer who builds websites, apps, and online platforms. Has worked with big companies and governments across different industries for years.
+                A software developer who builds websites, apps, and online
+                platforms. Has worked with big companies and governments across
+                different industries for years.
               </p>
               <p className="text-gray-400 leading-relaxed mb-6 sm:mb-8 text-sm md:text-base">
-                Focused on building things that work well, look good, are fast, and don't break. That's the standard for every project.
+                Focused on building things that work well, look good, are fast,
+                and don't break. That's the standard for every project.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a href="/cv" className="pill-button-primary text-center">
@@ -109,12 +121,22 @@ export default function About() {
                 {[
                   { label: "What I do", value: "Build websites and apps" },
                   { label: "Cloud", value: "AWS, Azure, Google Cloud" },
-                  { label: "Worked with", value: "Government, hospitals, banks, gaming" },
-                  { label: "Focus", value: "Fast, safe, and reliable software" },
+                  {
+                    label: "Worked with",
+                    value: "Government, hospitals, banks, gaming",
+                  },
+                  {
+                    label: "Focus",
+                    value: "Fast, safe, and reliable software",
+                  },
                 ].map((item) => (
                   <div key={item.label}>
-                    <div className="text-[10px] sm:text-xs uppercase tracking-widest text-gray-500 mb-0.5 sm:mb-1">{item.label}</div>
-                    <div className="text-xs sm:text-sm md:text-base text-white font-medium">{item.value}</div>
+                    <div className="text-[10px] sm:text-xs uppercase tracking-widest text-gray-500 mb-0.5 sm:mb-1">
+                      {item.label}
+                    </div>
+                    <div className="text-xs sm:text-sm md:text-base text-white font-medium">
+                      {item.value}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -158,7 +180,11 @@ export default function About() {
                 className="glass-card rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 transition-all duration-300"
               >
                 <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-orange-400/10 flex items-center justify-center mb-3 sm:mb-4">
-                  <value.icon size={16} className="text-orange-400" strokeWidth={1.5} />
+                  <value.icon
+                    size={16}
+                    className="text-orange-400"
+                    strokeWidth={1.5}
+                  />
                 </div>
                 <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white mb-2 sm:mb-3">
                   {value.title}
@@ -179,13 +205,17 @@ export default function About() {
             Want to work with us?
           </h2>
           <p className="text-gray-400 mb-6 sm:mb-8 max-w-md mx-auto text-sm md:text-base">
-            Need a website, an app, a logo, or all of it? Just reach out and tell us.
+            Need a website, an app, a logo, or all of it? Just reach out and
+            tell us.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
             <Link href="/contact" className="pill-button-primary text-center">
               Get in Touch
             </Link>
-            <Link href="/portfolio" className="pill-button text-gray-400 text-center">
+            <Link
+              href="/portfolio"
+              className="pill-button text-gray-400 text-center"
+            >
               View Our Work
             </Link>
           </div>

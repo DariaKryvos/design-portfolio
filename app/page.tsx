@@ -76,13 +76,13 @@ export default function Home() {
   return (
     <div>
       {/* ========== HERO ========== */}
-      <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[90svh] flex items-center justify-center overflow-hidden">
         <BlobBackground />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-24 md:py-32 w-full">
           {/* Main headline */}
           <div className="max-w-4xl">
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.9] tracking-tight">
+            <h1 className="text-7xl sm:text-7xl md:text-8xl lg:text-8xl  xl:text-[8rem] font-bold text-white leading-[0.9] tracking-tight">
               build
               <br />
               <span className="text-gray-500">your digital</span>
@@ -90,17 +90,18 @@ export default function Home() {
               empire
             </h1>
 
-            <p className="text-gray-300 mt-6 sm:mt-8 max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed">
-              We make <span className="text-white font-semibold">websites</span>,{" "}
-              <span className="text-white font-semibold">apps</span>,{" "}
+            <p className="text-gray-300 mt-6 sm:mt-7 max-w-2xl text-[1.1rem] sm:text-xl md:text-2xl leading-relaxed">
+              We make <span className="text-white font-semibold">websites</span>
+              , <span className="text-white font-semibold">apps</span>,{" "}
               <span className="text-white font-semibold">online stores</span>,{" "}
               <span className="text-white font-semibold">social media</span>,{" "}
               <span className="text-white font-semibold">logos</span>, and{" "}
               <span className="text-white font-semibold">cybersecurity</span>.
             </p>
 
-            <p className="text-gray-500 mt-3 sm:mt-4 max-w-lg text-sm md:text-base">
-              You tell us what you need. We design it, build it, launch it, and grow it.
+            <p className="text-gray-300 mt-3 sm:mt-4 max-w-lg text-sm md:text-base">
+              You tell us what you need. We design it, build it, launch it, and
+              grow it.
             </p>
 
             {/* CTA pills */}
@@ -108,7 +109,10 @@ export default function Home() {
               <Link href="/contact" className="pill-button-primary text-center">
                 Get Started
               </Link>
-              <Link href="/services" className="pill-button text-gray-400 text-center">
+              <Link
+                href="/services"
+                className="pill-button text-gray-300 text-center"
+              >
                 What We Do
               </Link>
             </div>
@@ -118,19 +122,21 @@ export default function Home() {
 
       {/* ========== CLIENT LOGOS ========== */}
       <section className="relative py-6 sm:py-8 md:py-14 overflow-hidden border-y border-white/5">
-        <p className="text-center text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.3em] text-gray-500 mb-4 sm:mb-6 md:mb-8">
+        <p className="text-center text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.3em] text-gray-400 mb-4 sm:mb-6 md:mb-8">
           Trusted by
         </p>
         <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex w-max animate-[scroll_20s_linear_infinite] hover:[animation-play-state:paused]">
-            {[...clients, ...clients, ...clients, ...clients].map((client, i) => (
-              <img
-                key={`${client.name}-${i}`}
-                src={client.logo}
-                alt={client.name}
-                className="h-4 sm:h-5 md:h-8 lg:h-10 w-auto mx-4 sm:mx-6 md:mx-10 shrink-0 brightness-0 invert opacity-50 hover:opacity-100 transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(255,106,0,0.5)]"
-              />
-            ))}
+            {[...clients, ...clients, ...clients, ...clients].map(
+              (client, i) => (
+                <img
+                  key={`${client.name}-${i}`}
+                  src={client.logo}
+                  alt={client.name}
+                  className="h-4 sm:h-5 md:h-8 lg:h-10 w-auto mx-4 sm:mx-6 md:mx-10 shrink-0 brightness-0 invert opacity-60 hover:opacity-100 transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(255,106,0,0.5)]"
+                />
+              ),
+            )}
           </div>
         </div>
       </section>
@@ -138,7 +144,7 @@ export default function Home() {
       {/* ========== SERVICES GRID ========== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-32">
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
-          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-500 mb-3 sm:mb-4">
+          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-400 mb-3 sm:mb-4">
             What we do
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
@@ -177,7 +183,7 @@ export default function Home() {
       {/* ========== BENEFITS ========== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-32">
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
-          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-500 mb-3 sm:mb-4">
+          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-400 mb-3 sm:mb-4">
             Why choose us
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
@@ -206,7 +212,7 @@ export default function Home() {
       <section className="border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-32">
           <div className="text-center mb-10 sm:mb-12 md:mb-16">
-            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-500 mb-3 sm:mb-4">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-400 mb-3 sm:mb-4">
               Use Cases
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
@@ -242,16 +248,26 @@ export default function Home() {
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1">
                   National Health Dashboard
                 </h3>
-                <span className="text-[10px] sm:text-xs text-gray-500 mb-3 sm:mb-4 block">Web App / Data Visualization</span>
+                <span className="text-[10px] sm:text-xs text-gray-500 mb-3 sm:mb-4 block">
+                  Web App / Data Visualization
+                </span>
                 <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mb-4 sm:mb-5">
-                  We built a live dashboard for the Dutch government that shows health data for the whole country. Millions of data points, updated in real time, used by the people who make the big decisions.
+                  We built a live dashboard for the Dutch government that shows
+                  health data for the whole country. Millions of data points,
+                  updated in real time, used by the people who make the big
+                  decisions.
                 </p>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                  {["+1.5b data points", "99.9% uptime", "National scale"].map((r) => (
-                    <span key={r} className="text-[10px] sm:text-xs px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-orange-400/10 text-orange-400/80 border border-orange-400/20">
-                      {r}
-                    </span>
-                  ))}
+                  {["+1.5b data points", "99.9% uptime", "National scale"].map(
+                    (r) => (
+                      <span
+                        key={r}
+                        className="text-[10px] sm:text-xs px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-orange-400/10 text-orange-400/80 border border-orange-400/20"
+                      >
+                        {r}
+                      </span>
+                    ),
+                  )}
                 </div>
               </div>
             </div>
@@ -266,7 +282,11 @@ export default function Home() {
                 project: "Rail Monitoring Platform",
                 category: "Web App / IoT",
                 desc: "We built a system that watches the Dutch train tracks in real time. If something goes wrong, it sends an alert right away. Covers the entire train network.",
-                results: ["Live monitoring", "Faster response", "Full network coverage"],
+                results: [
+                  "Live monitoring",
+                  "Faster response",
+                  "Full network coverage",
+                ],
                 image: "/prorail-1.png",
               },
               {
@@ -275,7 +295,11 @@ export default function Home() {
                 project: "Casino Gaming Platform",
                 category: "Web App / Real-time",
                 desc: "We built a gaming platform that handles thousands of players at the same time. Super fast, and all money transactions are safe and secure.",
-                results: ["1000s concurrent users", "<1s response", "Secure transactions"],
+                results: [
+                  "1000s concurrent users",
+                  "<1s response",
+                  "Secure transactions",
+                ],
                 image: "/AG.jpg",
               },
               {
@@ -284,7 +308,11 @@ export default function Home() {
                 project: "Premium E-commerce Store",
                 category: "E-commerce / Branding",
                 desc: "We built a fancy online shop where customers can customize products, pay safely, and stock updates automatically. Sales went up 180%.",
-                results: ["+180% conversion rate", "3s avg. load time", "+65k monthly visitors"],
+                results: [
+                  "+180% conversion rate",
+                  "3s avg. load time",
+                  "+65k monthly visitors",
+                ],
                 image: "/Codecomedy.png",
               },
               {
@@ -293,11 +321,18 @@ export default function Home() {
                 project: "Social Media Growth Campaign",
                 category: "Social Media / Content",
                 desc: "We ran all social media for a food delivery startup. Started from zero, grew to 300k+ people seeing their posts every month on Instagram, TikTok, and LinkedIn.",
-                results: ["+300k impressions/mo", "+240% engagement", "50k followers in 6 months"],
+                results: [
+                  "+300k impressions/mo",
+                  "+240% engagement",
+                  "50k followers in 6 months",
+                ],
                 image: "/reminderApp.png",
               },
             ].map((useCase) => (
-              <div key={useCase.project} className="glass-card rounded-xl sm:rounded-2xl overflow-hidden group">
+              <div
+                key={useCase.project}
+                className="glass-card rounded-xl sm:rounded-2xl overflow-hidden group"
+              >
                 <div className="aspect-[16/10] overflow-hidden relative">
                   <img
                     src={useCase.image}
@@ -308,17 +343,28 @@ export default function Home() {
                   <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4">
                     <div className="flex items-center gap-2 mb-1">
                       <useCase.icon size={12} className="text-orange-400" />
-                      <span className="text-[10px] sm:text-xs uppercase tracking-widest text-orange-400/70">{useCase.client}</span>
+                      <span className="text-[10px] sm:text-xs uppercase tracking-widest text-orange-400/70">
+                        {useCase.client}
+                      </span>
                     </div>
-                    <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white">{useCase.project}</h3>
+                    <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white">
+                      {useCase.project}
+                    </h3>
                   </div>
                 </div>
                 <div className="p-4 sm:p-5 md:p-6">
-                  <span className="text-[10px] sm:text-xs text-gray-500 block mb-2 sm:mb-3">{useCase.category}</span>
-                  <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mb-3 sm:mb-4">{useCase.desc}</p>
+                  <span className="text-[10px] sm:text-xs text-gray-500 block mb-2 sm:mb-3">
+                    {useCase.category}
+                  </span>
+                  <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mb-3 sm:mb-4">
+                    {useCase.desc}
+                  </p>
                   <div className="flex flex-wrap gap-1 sm:gap-1.5">
                     {useCase.results.map((r) => (
-                      <span key={r} className="text-[10px] sm:text-xs px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">
+                      <span
+                        key={r}
+                        className="text-[10px] sm:text-xs px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-white/5 text-gray-300 border border-white/10"
+                      >
                         {r}
                       </span>
                     ))}
@@ -329,7 +375,10 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-8 sm:mt-10 md:mt-14">
-            <Link href="/portfolio" className="pill-button text-gray-400 inline-flex items-center gap-2 hover:text-orange-400 hover:border-orange-400/30 transition-all">
+            <Link
+              href="/portfolio"
+              className="pill-button text-gray-400 inline-flex items-center gap-2 hover:text-orange-400 hover:border-orange-400/30 transition-all"
+            >
               View all projects <ArrowRight size={14} />
             </Link>
           </div>
@@ -337,7 +386,7 @@ export default function Home() {
       </section>
 
       {/* ========== PROCESS ========== */}
-      <section className="border-y border-white/5">
+      {/* <section className="border-y border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-32">
           <div className="text-center mb-10 sm:mb-12 md:mb-16">
             <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-500 mb-3 sm:mb-4">
@@ -388,21 +437,29 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ========== CTA ========== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-32 text-center">
         <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 sm:mb-6">
           Ready to start?
         </h2>
-        <p className="text-gray-400 mb-6 sm:mb-8 max-w-md mx-auto text-sm md:text-base">
+        <p className="text-gray-300 mb-6 sm:mb-8 max-w-md mx-auto text-sm md:text-base">
           Tell us what you need. We'll take care of the rest.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-          <Link href="/contact" className="pill-button-primary text-center">
+          <Link
+            href="/contact"
+            className="pill-button-primary text-sm font-medium"
+          >
+            {/* <span className="text-[10px] sm:text-xs px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-orange-400/10 text-orange-400/80 border border-orange-400/20"> */}
             Get in Touch
+            {/* </span> */}
           </Link>
-          <Link href="/portfolio" className="pill-button text-gray-400 text-center">
+          <Link
+            href="/portfolio"
+            className="pill-button text-gray-400 text-center"
+          >
             View Our Work
           </Link>
         </div>
