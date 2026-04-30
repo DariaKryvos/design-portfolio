@@ -1,76 +1,70 @@
 @import "tailwindcss";
 
-:root {
-  --background: #0a0a0b;
-  --foreground: #e1e1e1;
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  }
+
+  ::selection {
+    background-color: #18181b;
+    color: #fafafa;
+  }
+
+  /* Global focus-visible: skip browser default, use consistent ring */
+  :focus-visible {
+    outline: 2px solid #18181b;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Remove focus ring for mouse users */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Skip-to-content link — visually hidden until focused */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: #18181b;
+  color: #fafafa;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  transition: top 0.1s ease;
 }
 
-html {
-  overflow-x: hidden;
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid #ffffff;
+  outline-offset: -4px;
 }
 
-body {
-  background: #0a0a0b;
-  color: #e1e1e1;
-  font-family: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
-  overflow-x: hidden;
-  -webkit-text-size-adjust: 100%;
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease forwards;
+  }
 }
 
-/* Glassmorphic card style */
-.glass-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-.glass-card:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.15);
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gradient-text-warm {
-  background: linear-gradient(135deg, #ff6a00 0%, #ff3d00 50%, #ffaa00 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Glow effects */
-.glow-orange {
-  box-shadow: 0 0 40px rgba(255, 106, 0, 0.15), 0 0 80px rgba(255, 106, 0, 0.05);
-}
-
-.glow-text {
-  text-shadow: 0 0 40px rgba(255, 106, 0, 0.3);
-}
-
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Stat counter animation */
-@keyframes fadeInUp {
+@keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -78,106 +72,32 @@ html {
   }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-/* Pill button style */
-.pill-button {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 9999px;
-  padding: 0.5rem 1.25rem;
-  font-size: 0.8125rem;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  white-space: nowrap;
-}
-
-@media (min-width: 640px) {
-  .pill-button {
-    padding: 0.625rem 1.5rem;
-    font-size: 0.875rem;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
-.pill-button:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.4);
+/* Hide scrollbar on the horizontal project scroll track */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Active/tap state for touch devices */
-.pill-button:active {
-  transform: scale(0.97);
-}
-
-.pill-button-primary {
-  border: 1px solid rgba(255, 106, 0, 0.3);
-  border-radius: 9999px;
-  padding: 0.5rem 1.25rem;
-  font-size: 0.8125rem;
-  transition: all 0.3s ease;
-  background: rgba(255, 106, 0, 0.15);
-  color: #ff8c3a;
-  white-space: nowrap;
-}
-
-@media (min-width: 640px) {
-  .pill-button-primary {
-    padding: 0.625rem 1.5rem;
-    font-size: 0.875rem;
-  }
-}
-
-.pill-button-primary:hover {
-  background: rgba(255, 106, 0, 0.25);
-  border-color: rgba(255, 106, 0, 0.5);
-}
-
-.pill-button-primary:active {
-  transform: scale(0.97);
-}
-
-/* Focus-visible for keyboard accessibility */
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid rgba(255, 106, 0, 0.7);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-.pill-button:focus-visible,
-.pill-button-primary:focus-visible {
-  outline: 2px solid rgba(255, 106, 0, 0.7);
-  outline-offset: 2px;
-}
-
-/* Selection color */
-::selection {
-  background: rgba(255, 106, 0, 0.3);
-  color: #ffffff;
-}
-
-/* ===== Client Marquee ===== */
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* Safe area for notched phones */
-@supports (padding-bottom: env(safe-area-inset-bottom)) {
-  .safe-bottom {
-    padding-bottom: env(safe-area-inset-bottom);
-  }
-}
-
-/* Prevent tap highlight on mobile */
-* {
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* Better touch targets */
-@media (hover: none) and (pointer: coarse) {
-  .glass-card {
-    min-height: 44px;
+/* Respect user motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
