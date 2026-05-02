@@ -91,7 +91,7 @@ export default function AboutPage() {
             </h1>
             <div className="space-y-4 text-zinc-600 leading-relaxed">
               <p>
-                I&apos;m a UX/UI designer with four years of experience working
+                I&apos;m a UX/UI designer with seven years of experience working
                 on systems that genuinely matter — patient portals, government
                 dashboards, railway disruption flows. The common thread is
                 complexity: these are products where poor design has real

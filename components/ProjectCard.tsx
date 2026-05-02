@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Tag from "./Tag";
 import { Project } from "@/data/projects";
+import { useState } from "react";
 
 interface ProjectCardProps {
   project: Project;
@@ -10,6 +11,25 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
+  const slideImages = [project.image, ...project.finalPrototype].filter(
+    (img, i, arr) => img && arr.indexOf(img) === i
+  );
+  const hasSlides = slideImages.length > 1;
+
+  const [current, setCurrent] = useState(0);
+
+  function prev(e: React.MouseEvent) {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrent((c) => (c - 1 + slideImages.length) % slideImages.length);
+  }
+
+  function next(e: React.MouseEvent) {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrent((c) => (c + 1) % slideImages.length);
+  }
+
   return (
     <Link
       href={`/projects/${project.slug}`}
@@ -20,13 +40,78 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       <article className="relative overflow-hidden rounded-2xl bg-zinc-50 border border-zinc-100 transition-all duration-500 hover:border-zinc-200 hover:shadow-xl hover:shadow-zinc-100/80 hover:-translate-y-1">
 
         <div className="aspect-[4/3] relative overflow-hidden bg-zinc-100">
-          {project.image ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={project.image}
-              alt={`${project.title} preview`}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
+          {slideImages.length > 0 ? (
+            <>
+              {/* Sliding strip */}
+              <div
+                className="flex h-full transition-transform duration-500 ease-in-out"
+                style={{
+                  transform: `translateX(-${(current / slideImages.length) * 100}%)`,
+                  width: `${slideImages.length * 100}%`,
+                }}
+              >
+                {slideImages.map((img) => (
+                  <div
+                    key={img}
+                    className="relative flex-shrink-0 h-full"
+                    style={{ width: `${100 / slideImages.length}%` }}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={img}
+                      alt={`${project.title} preview`}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {/* Arrows — visible on hover */}
+              {hasSlides && (
+                <>
+                  <button
+                    onClick={prev}
+                    className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-white shadow"
+                    aria-label="Previous image"
+                  >
+                    <svg className="w-4 h-4 text-zinc-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={next}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-white shadow"
+                    aria-label="Next image"
+                  >
+                    <svg className="w-4 h-4 text-zinc-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </>
+              )}
+
+              {/* Dot indicators */}
+              {hasSlides && (
+                <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
+                  {slideImages.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setCurrent(idx);
+                      }}
+                      className={`rounded-full transition-all duration-300 ${
+                        idx === current
+                          ? "w-4 h-1.5 bg-white shadow"
+                          : "w-1.5 h-1.5 bg-white/50 hover:bg-white/80"
+                      }`}
+                      aria-label={`Slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
+            </>
           ) : (
             <div
               role="img"
@@ -40,7 +125,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               </div>
             </div>
           )}
-          <div className="absolute inset-0 bg-zinc-900/0 group-hover:bg-zinc-900/5 transition-colors duration-500" aria-hidden="true" />
+
+          <div className="absolute inset-0 bg-zinc-900/0 group-hover:bg-zinc-900/5 transition-colors duration-500 pointer-events-none" aria-hidden="true" />
         </div>
 
         <div className="p-6 md:p-8">

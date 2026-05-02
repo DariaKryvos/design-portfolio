@@ -197,10 +197,12 @@ export const projects: Project[] = [
     ],
 
     finalPrototype: [
-      "/1.png",
-      "/2.png",
-      "/3.png",
-      "/4.png",
+     
+      "/ProRail1.png",
+      "/ProRail2.png",
+      "/ProRail3.png",
+      "/ProRail4.png",
+       "/ProRail.svg",
     ],
 
     usabilityResults: [
@@ -361,9 +363,10 @@ export const projects: Project[] = [
     ],
 
     finalPrototype: [
-      "/1.png",
-      "/2.png",
-      "/3.png",
+      "/corona1.png",
+      "/corona2.png",
+      "/corona3.png",
+      "/Ministerie-VWS-logo.png",
     ],
 
     usabilityResults: [
@@ -391,7 +394,7 @@ export const projects: Project[] = [
     title: "UMCG Patient Portal",
     description:
       "Redesigning how patients manage their health journey at one of the Netherlands' largest university medical centres.",
-    image: "/umsg1.png",
+    image: "/umcg1.png",
     tags: ["Healthcare UX", "Accessibility", "Complex Systems", "Research"],
     role: "UX/UI Designer",
     tools: ["Figma", "FigJam", "UserZoom", "Axure"],
@@ -524,9 +527,9 @@ export const projects: Project[] = [
     ],
 
     finalPrototype: [
-      "/umcg-charts.png",
-      "/UMCGN.png",
-      "/reminderApp.png",
+      "/umcg1.png",
+      "/umcg3.png",
+      "/umcg-logo.png",
     ],
 
     usabilityResults: [
@@ -554,7 +557,7 @@ export const projects: Project[] = [
     title: "AGaming Onboarding",
     description:
       "Redesigning first-run experience for a competitive gaming platform — reducing drop-off by 61% in the critical first 10 minutes.",
-    image: "/PLATEE.png",
+    image: "/ag00.jpg",
     tags: ["Onboarding", "Retention", "Gamification", "Mobile-first"],
     role: "UX Designer",
     tools: ["Figma", "FullStory", "Amplitude", "Lottie"],
@@ -682,9 +685,16 @@ export const projects: Project[] = [
     ],
 
     finalPrototype: [
-      "/agaming-mobile.png",
-      "/AGaming.png",
-      "/iPhoneX-03a.png",
+        "/ag00.jpg",
+        "/ag1.png",
+        "/ag01.png",
+        "/ag02.jpg",
+        "/ag2.png",
+        "/ag3.png",
+        "/ag4.png",
+        "/ag5.png",
+        "/ag6.png",
+      "/agaming.webp",
     ],
 
     usabilityResults: [
@@ -706,326 +716,322 @@ export const projects: Project[] = [
       },
     ],
   },
-  {
-    slug: "wawa-design-system",
-    title: "Asia Gaming ",
-    description:
-      "Building a scalable, accessible design system for a multi-platform retail brand — reducing design-to-dev handoff time by 70%.",
-    image: "/ag1.png",
-    tags: ["Design Systems", "Accessibility", "Multi-platform", "Component Library"],
-    role: "Design Systems Lead",
-    tools: ["Figma", "Storybook", "Zeroheight", "Chromatic"],
-    timeline: "Feb 2024 – Aug 2024 (7 months)",
+//   {
+//     slug: "wawa-design-system",
+//     title: "Asia Gaming ",
+//     description:
+//       "Building a scalable, accessible design system for a multi-platform retail brand — reducing design-to-dev handoff time by 70%.",
+//     image: "/ag1.png",
+//     tags: ["Design Systems", "Accessibility", "Multi-platform", "Component Library"],
+//     role: "Design Systems Lead",
+//     tools: ["Figma", "Storybook", "Zeroheight", "Chromatic"],
+//     timeline: "Feb 2024 – Aug 2024 (7 months)",
 
-    problem:
-      "Wawa's product teams were operating with 4 disconnected UI libraries — one per platform — leading to visual inconsistency, duplicated effort, and a 3-week average handoff lag between design and engineering. New features shipped with divergent styles across web, iOS, and Android.",
-    problemDetails: [
-      "Components were defined independently by each platform team, meaning a 'button' had 11 different implementations with different states, colours, and interaction patterns.",
-      "Accessibility was applied inconsistently — some components met WCAG 2.1 AA, others failed basic contrast checks. There was no single source of truth for compliance.",
-      "Design tokens didn't exist — values like colour, spacing, and typography were hardcoded in Figma frames and code, making brand updates a multi-week manual operation.",
-    ],
+//     problem:
+//       "Wawa's product teams were operating with 4 disconnected UI libraries — one per platform — leading to visual inconsistency, duplicated effort, and a 3-week average handoff lag between design and engineering. New features shipped with divergent styles across web, iOS, and Android.",
+//     problemDetails: [
+//       "Components were defined independently by each platform team, meaning a 'button' had 11 different implementations with different states, colours, and interaction patterns.",
+//       "Accessibility was applied inconsistently — some components met WCAG 2.1 AA, others failed basic contrast checks. There was no single source of truth for compliance.",
+//       "Design tokens didn't exist — values like colour, spacing, and typography were hardcoded in Figma frames and code, making brand updates a multi-week manual operation.",
+//     ],
 
-    researchObjectives: [
-      "Audit the existing component landscape across all 4 platforms to identify duplication and divergence",
-      "Understand how designers and engineers currently collaborate — where handoff breaks down",
-      "Define what 'done' looks like for a component from both design and engineering perspectives",
-      "Establish adoption criteria — what would make teams switch from their current libraries",
-    ],
+//     researchObjectives: [
+//       "Audit the existing component landscape across all 4 platforms to identify duplication and divergence",
+//       "Understand how designers and engineers currently collaborate — where handoff breaks down",
+//       "Define what 'done' looks like for a component from both design and engineering perspectives",
+//       "Establish adoption criteria — what would make teams switch from their current libraries",
+//     ],
 
-    targetUsers: [
-      {
-        name: "The Product Designer",
-        description:
-          "Builds features across web and mobile. Needs components that are flexible enough to solve their design problem but opinionated enough to maintain consistency. Frustrated by components that break when customised.",
-      },
-      {
-        name: "The Frontend Engineer",
-        description:
-          "Implements design specs in code. Values clear documentation, predictable API, and components that don't require reverse-engineering the Figma file to understand intended behaviour.",
-      },
-      {
-        name: "The Accessibility Lead",
-        description:
-          "Responsible for WCAG compliance across products. Needs every component to have documented accessibility annotations and tested keyboard/screen reader behaviour before it reaches production.",
-      },
-    ],
+//     targetUsers: [
+//       {
+//         name: "The Product Designer",
+//         description:
+//           "Builds features across web and mobile. Needs components that are flexible enough to solve their design problem but opinionated enough to maintain consistency. Frustrated by components that break when customised.",
+//       },
+//       {
+//         name: "The Frontend Engineer",
+//         description:
+//           "Implements design specs in code. Values clear documentation, predictable API, and components that don't require reverse-engineering the Figma file to understand intended behaviour.",
+//       },
+//       {
+//         name: "The Accessibility Lead",
+//         description:
+//           "Responsible for WCAG compliance across products. Needs every component to have documented accessibility annotations and tested keyboard/screen reader behaviour before it reaches production.",
+//       },
+//     ],
 
-    researchFindings: [
-      {
-        insight: "Teams were building the same component up to 6 times",
-        detail:
-          "Component audit across 4 platforms and 3 product teams found 6 distinct implementations of a date picker, none sharing logic or visual language. Engineers estimated 2–3 weeks per redundant implementation — representing significant ongoing waste.",
-      },
-      {
-        insight: "Handoff failures were documentation failures",
-        detail:
-          "In interviews with 14 engineers, the most common complaint was not missing components but missing specification — interaction states, error conditions, edge cases, and responsive behaviour were left to engineering interpretation.",
-      },
-      {
-        insight: "Adoption required proof, not promise",
-        detail:
-          "Teams that had tried shared libraries before were burned by libraries that fell behind. They would only adopt the new system if it could demonstrate maintenance commitment — active ownership, clear versioning, and a public roadmap.",
-      },
-      {
-        insight: "Tokens were the highest-leverage intervention",
-        detail:
-          "By mapping a single brand colour update across all platforms, we found it would require changes to 847 hardcoded values across design files and codebases. A token layer reduced this to a single source change propagating everywhere.",
-      },
-    ],
+//     researchFindings: [
+//       {
+//         insight: "Teams were building the same component up to 6 times",
+//         detail:
+//           "Component audit across 4 platforms and 3 product teams found 6 distinct implementations of a date picker, none sharing logic or visual language. Engineers estimated 2–3 weeks per redundant implementation — representing significant ongoing waste.",
+//       },
+//       {
+//         insight: "Handoff failures were documentation failures",
+//         detail:
+//           "In interviews with 14 engineers, the most common complaint was not missing components but missing specification — interaction states, error conditions, edge cases, and responsive behaviour were left to engineering interpretation.",
+//       },
+//       {
+//         insight: "Adoption required proof, not promise",
+//         detail:
+//           "Teams that had tried shared libraries before were burned by libraries that fell behind. They would only adopt the new system if it could demonstrate maintenance commitment — active ownership, clear versioning, and a public roadmap.",
+//       },
+//       {
+//         insight: "Tokens were the highest-leverage intervention",
+//         detail:
+//           "By mapping a single brand colour update across all platforms, we found it would require changes to 847 hardcoded values across design files and codebases. A token layer reduced this to a single source change propagating everywhere.",
+//       },
+//     ],
 
-    ideation: [
-      {
-        description:
-          "Ran a two-day component audit workshop with designers and engineers from each platform. Used a traffic-light system — red (diverged/broken), amber (similar but inconsistent), green (reusable as-is). Identified 23 green components to migrate immediately as quick wins.",
-        image: "/wawa-logo.svg",
-      },
-      {
-        description:
-          "Explored two structural models: a 'monorepo' approach with one canonical component set, vs a 'hub and spoke' model with platform-specific extensions built on a shared core. Hub and spoke won — it respected platform conventions while enforcing shared foundations.",
-      },
-    ],
+//     ideation: [
+//       {
+//         description:
+//           "Ran a two-day component audit workshop with designers and engineers from each platform. Used a traffic-light system — red (diverged/broken), amber (similar but inconsistent), green (reusable as-is). Identified 23 green components to migrate immediately as quick wins.",
+//         image: "/wawa-logo.svg",
+//       },
+//       {
+//         description:
+//           "Explored two structural models: a 'monorepo' approach with one canonical component set, vs a 'hub and spoke' model with platform-specific extensions built on a shared core. Hub and spoke won — it respected platform conventions while enforcing shared foundations.",
+//       },
+//     ],
 
-    wireframes: [
-      {
-        description:
-          "Component documentation template: each component page included a usage decision tree ('when to use / when not to use'), all variants and states, accessibility annotations, and a live code example. Reduced engineer questions per component from 8 avg to 1.2.",
-        image: "/wawa-logo.svg",
-      },
-      {
-        description:
-          "Token architecture diagram: three-layer token system — global (raw values), semantic (purpose-named), component (applied). A brand colour change at the global layer propagated to semantic and component tokens automatically.",
-        image: "/wawa-logo.svg",
-      },
-    ],
+//     wireframes: [
+//       {
+//         description:
+//           "Component documentation template: each component page included a usage decision tree ('when to use / when not to use'), all variants and states, accessibility annotations, and a live code example. Reduced engineer questions per component from 8 avg to 1.2.",
+//         image: "/wawa-logo.svg",
+//       },
+//       {
+//         description:
+//           "Token architecture diagram: three-layer token system — global (raw values), semantic (purpose-named), component (applied). A brand colour change at the global layer propagated to semantic and component tokens automatically.",
+//         image: "/wawa-logo.svg",
+//       },
+//     ],
 
-    designDecisions: [
-      {
-        decision: "Three-tier token architecture (global → semantic → component)",
-        reasoning:
-          "We implemented a three-layer token system because direct component-to-value mapping broke on brand updates — changing a button colour required updating dozens of individual references. Semantic tokens ('color-action-primary') decoupled meaning from value, making rebranding a one-line change.",
-      },
-      {
-        decision: "Accessibility annotations as required component documentation",
-        reasoning:
-          "We made accessibility specs non-optional in the component contribution checklist because optional meant skipped. Every component now ships with keyboard navigation map, ARIA role documentation, and screen reader output. WCAG AA compliance went from 61% to 100% of shipped components.",
-      },
-      {
-        decision: "Public roadmap and versioned changelog",
-        reasoning:
-          "We published a roadmap and enforced semantic versioning because teams refused to adopt a system they didn't trust to be maintained. Transparency about what was coming and what had changed reduced adoption resistance and gave teams confidence to build on top of the system.",
-      },
-      {
-        decision: "Visual regression testing on every PR via Chromatic",
-        reasoning:
-          "We added automated screenshot comparison because manually reviewing component changes across platforms was impractical and changes were breaking visual consistency silently. Chromatic flagged regressions before merge, not after.",
-      },
-    ],
+//     designDecisions: [
+//       {
+//         decision: "Three-tier token architecture (global → semantic → component)",
+//         reasoning:
+//           "We implemented a three-layer token system because direct component-to-value mapping broke on brand updates — changing a button colour required updating dozens of individual references. Semantic tokens ('color-action-primary') decoupled meaning from value, making rebranding a one-line change.",
+//       },
+//       {
+//         decision: "Accessibility annotations as required component documentation",
+//         reasoning:
+//           "We made accessibility specs non-optional in the component contribution checklist because optional meant skipped. Every component now ships with keyboard navigation map, ARIA role documentation, and screen reader output. WCAG AA compliance went from 61% to 100% of shipped components.",
+//       },
+//       {
+//         decision: "Public roadmap and versioned changelog",
+//         reasoning:
+//           "We published a roadmap and enforced semantic versioning because teams refused to adopt a system they didn't trust to be maintained. Transparency about what was coming and what had changed reduced adoption resistance and gave teams confidence to build on top of the system.",
+//       },
+//       {
+//         decision: "Visual regression testing on every PR via Chromatic",
+//         reasoning:
+//           "We added automated screenshot comparison because manually reviewing component changes across platforms was impractical and changes were breaking visual consistency silently. Chromatic flagged regressions before merge, not after.",
+//       },
+//     ],
 
-    iterations: [
-      {
-        version: "V1",
-        change: "Flat component structure",
-        reason:
-          "Primitive and composite components were mixed at the same level, causing confusion about dependency chains. Introduced 'atoms → molecules → organisms' hierarchy, making composition relationships explicit.",
-      },
-      {
-        version: "V2",
-        change: "Revised contribution process",
-        reason:
-          "Initial process required design system team approval for every component — a bottleneck. Changed to a 'propose → draft → review → publish' model where platform teams could draft components autonomously, with DS team only reviewing before publish.",
-      },
-      {
-        version: "V3",
-        change: "Added dark mode token layer",
-        reason:
-          "Dark mode requirements came in mid-project. Semantic tokens made this feasible — we added a dark-mode value set without restructuring any components. Tokens proved their value immediately.",
-      },
-    ],
+//     iterations: [
+//       {
+//         version: "V1",
+//         change: "Flat component structure",
+//         reason:
+//           "Primitive and composite components were mixed at the same level, causing confusion about dependency chains. Introduced 'atoms → molecules → organisms' hierarchy, making composition relationships explicit.",
+//       },
+//       {
+//         version: "V2",
+//         change: "Revised contribution process",
+//         reason:
+//           "Initial process required design system team approval for every component — a bottleneck. Changed to a 'propose → draft → review → publish' model where platform teams could draft components autonomously, with DS team only reviewing before publish.",
+//       },
+//       {
+//         version: "V3",
+//         change: "Added dark mode token layer",
+//         reason:
+//           "Dark mode requirements came in mid-project. Semantic tokens made this feasible — we added a dark-mode value set without restructuring any components. Tokens proved their value immediately.",
+//       },
+//     ],
 
-    finalPrototype: [
-      "/ag1.png",
-      "/ag2.png",
-      "/ag3.png",
-      "/ag4.png",
-    ],
+//     finalPrototype: [
+//       "/ag2.png",
+//       "/ag3.png",
+//       "/ag4.png",
+//       "/ag5.png",
+//     ],
 
-    usabilityResults: [
-      {
-        metric: "Design-to-dev handoff time",
-        outcome: "Reduced from 3 weeks average to 4 days — 70% reduction across all platform teams",
-      },
-      {
-        metric: "Component duplication",
-        outcome: "From 6 average implementations per UI pattern to 1 shared implementation with platform extensions",
-      },
-      {
-        metric: "WCAG AA compliance",
-        outcome: "61% of components passing → 100% of shipped components passing, with automated regression testing",
-      },
-      {
-        metric: "Brand update propagation time",
-        outcome: "Global colour update: 3 weeks manual → 2 hours with token architecture",
-      },
-    ],
-  },
+//     usabilityResults: [
+//       {
+//         metric: "Design-to-dev handoff time",
+//         outcome: "Reduced from 3 weeks average to 4 days — 70% reduction across all platform teams",
+//       },
+//       {
+//         metric: "Component duplication",
+//         outcome: "From 6 average implementations per UI pattern to 1 shared implementation with platform extensions",
+//       },
+//       {
+//         metric: "WCAG AA compliance",
+//         outcome: "61% of components passing → 100% of shipped components passing, with automated regression testing",
+//       },
+//       {
+//         metric: "Brand update propagation time",
+//         outcome: "Global colour update: 3 weeks manual → 2 hours with token architecture",
+//       },
+//     ],
+//   },
 
-  {
-    slug: "codecomedy-creator-tools",
-    title: "Codecomedy Creator Tools",
-    description:
-      "Designing a content creation suite for developer educators — helping technical creators produce and publish programming content 3× faster.",
-    image: "/Codecomedy.png",
-    tags: ["Creator Tools", "EdTech", "Productivity", "SaaS"],
-    role: "Product Designer",
-    tools: ["Figma", "Maze", "Hotjar", "Linear"],
-    timeline: "Oct 2023 – Feb 2024 (5 months)",
+//   {
+//     slug: "codecomedy-creator-tools",
+//     title: "Codecomedy Creator Tools",
+//     description:
+//       "Designing a content creation suite for developer educators — helping technical creators produce and publish programming content 3× faster.",
+//     image: "/Codecomedy.png",
+//     tags: ["Creator Tools", "EdTech", "Productivity", "SaaS"],
+//     role: "Product Designer",
+//     tools: ["Figma", "Maze", "Hotjar", "Linear"],
+//     timeline: "Oct 2023 – Feb 2024 (5 months)",
 
-    problem:
-      "Developer educators using Codecomedy were spending 70% of their production time on tasks outside their expertise — video editing, thumbnail creation, SEO formatting, and code snippet styling — not on the technical content itself. The platform had no creation tools; creators were stitching together 6+ external tools to publish a single lesson.",
-    problemDetails: [
-      "Code snippets required manual export from IDE, screenshot, resize, watermark, and upload — an 8-step process repeated for every lesson segment.",
-      "Creators had no visibility into which content performed best until after publication, missing the ability to iterate before publishing.",
-      "The publishing workflow required manual metadata entry across 3 systems — the platform, YouTube, and a newsletter — duplicating effort that creators described as 'the part that kills momentum.'",
-    ],
+//     problem:
+//       "Developer educators using Codecomedy were spending 70% of their production time on tasks outside their expertise — video editing, thumbnail creation, SEO formatting, and code snippet styling — not on the technical content itself. The platform had no creation tools; creators were stitching together 6+ external tools to publish a single lesson.",
+//     problemDetails: [
+//       "Code snippets required manual export from IDE, screenshot, resize, watermark, and upload — an 8-step process repeated for every lesson segment.",
+//       "Creators had no visibility into which content performed best until after publication, missing the ability to iterate before publishing.",
+//       "The publishing workflow required manual metadata entry across 3 systems — the platform, YouTube, and a newsletter — duplicating effort that creators described as 'the part that kills momentum.'",
+//     ],
 
-    researchObjectives: [
-      "Map the complete content production workflow from idea to published lesson",
-      "Identify which steps consumed the most time relative to their creative value",
-      "Understand what 'flow state' looked like for technical creators and what broke it",
-      "Discover what tools creators already loved and why, to inform integration decisions",
-    ],
+//     researchObjectives: [
+//       "Map the complete content production workflow from idea to published lesson",
+//       "Identify which steps consumed the most time relative to their creative value",
+//       "Understand what 'flow state' looked like for technical creators and what broke it",
+//       "Discover what tools creators already loved and why, to inform integration decisions",
+//     ],
 
-    targetUsers: [
-      {
-        name: "The Independent Creator",
-        description:
-          "Publishes 1–4 lessons per month alongside a day job. Time is the critical constraint. Values automation that eliminates repetitive tasks. Unlikely to invest time in learning complex new tools.",
-      },
-      {
-        name: "The Full-Time Educator",
-        description:
-          "Publishes 2–3 lessons per week, treats this as a business. Cares deeply about production quality and analytics. Will invest in learning powerful tools if the ROI is clear.",
-      },
-    ],
+//     targetUsers: [
+//       {
+//         name: "The Independent Creator",
+//         description:
+//           "Publishes 1–4 lessons per month alongside a day job. Time is the critical constraint. Values automation that eliminates repetitive tasks. Unlikely to invest time in learning complex new tools.",
+//       },
+//       {
+//         name: "The Full-Time Educator",
+//         description:
+//           "Publishes 2–3 lessons per week, treats this as a business. Cares deeply about production quality and analytics. Will invest in learning powerful tools if the ROI is clear.",
+//       },
+//     ],
 
-    researchFindings: [
-      {
-        insight: "Code formatting consumed 40% of production time",
-        detail:
-          "Time-diary study with 12 creators showed that code snippet preparation — including syntax highlighting, line numbering, and visual styling — consumed an average of 40% of total production time. This was the single highest-leverage intervention point.",
-      },
-      {
-        insight: "Context switching was the productivity killer",
-        detail:
-          "Creators switched between an average of 7.3 tools per lesson. Each switch cost not just transition time but cognitive context — multiple creators described losing their 'teaching voice' when returning from Photoshop or Premiere.",
-      },
-      {
-        insight: "Pre-publication preview was a critical missing feature",
-        detail:
-          "8 of 12 creators described publishing a lesson and then immediately identifying improvements they would have caught with a preview. The absence of a realistic preview was causing avoidable post-publication edits — damaging audience experience.",
-      },
-      {
-        insight: "Creators wanted analytics during creation, not just after",
-        detail:
-          "The most successful creators had developed intuitions for what worked — specific code complexity levels, lesson lengths, topic clusters. They wanted these patterns surfaced during creation ('similar lessons averaged 4.2k views') to inform decisions before publishing.",
-      },
-    ],
+//     researchFindings: [
+//       {
+//         insight: "Code formatting consumed 40% of production time",
+//         detail:
+//           "Time-diary study with 12 creators showed that code snippet preparation — including syntax highlighting, line numbering, and visual styling — consumed an average of 40% of total production time. This was the single highest-leverage intervention point.",
+//       },
+//       {
+//         insight: "Context switching was the productivity killer",
+//         detail:
+//           "Creators switched between an average of 7.3 tools per lesson. Each switch cost not just transition time but cognitive context — multiple creators described losing their 'teaching voice' when returning from Photoshop or Premiere.",
+//       },
+//       {
+//         insight: "Pre-publication preview was a critical missing feature",
+//         detail:
+//           "8 of 12 creators described publishing a lesson and then immediately identifying improvements they would have caught with a preview. The absence of a realistic preview was causing avoidable post-publication edits — damaging audience experience.",
+//       },
+//       {
+//         insight: "Creators wanted analytics during creation, not just after",
+//         detail:
+//           "The most successful creators had developed intuitions for what worked — specific code complexity levels, lesson lengths, topic clusters. They wanted these patterns surfaced during creation ('similar lessons averaged 4.2k views') to inform decisions before publishing.",
+//       },
+//     ],
 
-    ideation: [
-      {
-        description:
-          "The 'single canvas' concept — a creation environment where code, narration script, video segments, and publish settings all lived in one view. Inspired by Notion's block model but optimised for the lesson structure of technical content.",
-        image: "/Codecomedy.png",
-      },
-      {
-        description:
-          "Explored a 'smart snippet' system: paste raw code, the tool automatically applies syntax highlighting, suggests visual styles based on lesson topic, and packages it for multiple export targets (web, YouTube thumbnail, newsletter) simultaneously.",
-        image: "/Codecomedy.png",
-      },
-    ],
+//     ideation: [
+//       {
+//         description:
+//           "The 'single canvas' concept — a creation environment where code, narration script, video segments, and publish settings all lived in one view. Inspired by Notion's block model but optimised for the lesson structure of technical content.",
+//         image: "/Codecomedy.png",
+//       },
+//       {
+//         description:
+//           "Explored a 'smart snippet' system: paste raw code, the tool automatically applies syntax highlighting, suggests visual styles based on lesson topic, and packages it for multiple export targets (web, YouTube thumbnail, newsletter) simultaneously.",
+//         image: "/Codecomedy.png",
+//       },
+//     ],
 
-    wireframes: [
-      {
-        description:
-          "Lesson canvas: code block editor with live preview, inline script notes, and a sidebar showing estimated read/watch time and audience match score. Designed to keep creators in one place for 80% of their workflow.",
-        image: "/Codecomedy.png",
-      },
-      {
-        description:
-          "One-click publish: after creation, a single 'Publish' action generated all format variants and pushed to platform, YouTube description, and newsletter — with per-channel customisation available but not required.",
-        image: "/Codecomedy.png",
-      },
-    ],
+//     wireframes: [
+//       {
+//         description:
+//           "Lesson canvas: code block editor with live preview, inline script notes, and a sidebar showing estimated read/watch time and audience match score. Designed to keep creators in one place for 80% of their workflow.",
+//         image: "/Codecomedy.png",
+//       },
+//       {
+//         description:
+//           "One-click publish: after creation, a single 'Publish' action generated all format variants and pushed to platform, YouTube description, and newsletter — with per-channel customisation available but not required.",
+//         image: "/Codecomedy.png",
+//       },
+//     ],
 
-    designDecisions: [
-      {
-        decision: "Code editor with live visual output instead of separate styling step",
-        reasoning:
-          "We integrated a styled code editor because the separate export-and-style process was identified as the highest time cost. Combining editing and presentation meant creators could see their final snippet appearance while writing — eliminating the back-and-forth entirely.",
-      },
-      {
-        decision: "Contextual performance hints during creation",
-        reasoning:
-          "We surfaced lightweight analytics ('your last 5 JavaScript lessons averaged 3.8k views, 12% above your mean') during creation because creators made better content decisions with comparable data nearby. We kept it unobtrusive — a collapsed sidebar, not a dashboard — to preserve focus.",
-      },
-      {
-        decision: "Multi-target publish from a single action",
-        reasoning:
-          "We reduced the publish flow to one action with channel-specific overrides available because creators consistently said the metadata duplication was the moment they lost momentum. Optional customisation preserved flexibility; the default handled the common case automatically.",
-      },
-      {
-        decision: "Block-based lesson structure instead of free-form editor",
-        reasoning:
-          "We used a structured block model (intro / concept / code / summary) because unstructured editors produced lessons with inconsistent quality. The blocks also enabled type-specific features — a code block got the snippet editor; a concept block got vocabulary highlighting.",
-      },
-    ],
+//     designDecisions: [
+//       {
+//         decision: "Code editor with live visual output instead of separate styling step",
+//         reasoning:
+//           "We integrated a styled code editor because the separate export-and-style process was identified as the highest time cost. Combining editing and presentation meant creators could see their final snippet appearance while writing — eliminating the back-and-forth entirely.",
+//       },
+//       {
+//         decision: "Contextual performance hints during creation",
+//         reasoning:
+//           "We surfaced lightweight analytics ('your last 5 JavaScript lessons averaged 3.8k views, 12% above your mean') during creation because creators made better content decisions with comparable data nearby. We kept it unobtrusive — a collapsed sidebar, not a dashboard — to preserve focus.",
+//       },
+//       {
+//         decision: "Multi-target publish from a single action",
+//         reasoning:
+//           "We reduced the publish flow to one action with channel-specific overrides available because creators consistently said the metadata duplication was the moment they lost momentum. Optional customisation preserved flexibility; the default handled the common case automatically.",
+//       },
+//       {
+//         decision: "Block-based lesson structure instead of free-form editor",
+//         reasoning:
+//           "We used a structured block model (intro / concept / code / summary) because unstructured editors produced lessons with inconsistent quality. The blocks also enabled type-specific features — a code block got the snippet editor; a concept block got vocabulary highlighting.",
+//       },
+//     ],
 
-    iterations: [
-      {
-        version: "V1",
-        change: "Fully integrated video editor",
-        reason:
-          "Scope was too large and competed with tools creators already loved (Premiere, ScreenFlow). Scoped back to code and written content, with video as an embeddable asset — playing to our strengths rather than replicating established tools.",
-      },
-      {
-        version: "V2",
-        change: "Performance hints redesign",
-        reason:
-          "First version showed a persistent analytics panel that creators found distracting. Moved to an on-demand card triggered by a single icon — present when wanted, invisible when not.",
-      },
-      {
-        version: "V3",
-        change: "Added collaborative editing for team accounts",
-        reason:
-          "Several creator studios had co-authors and editors. Adding comment and suggestion mode on lesson blocks unlocked a new segment — small creator businesses with editorial workflows.",
-      },
-    ],
+//     iterations: [
+//       {
+//         version: "V1",
+//         change: "Fully integrated video editor",
+//         reason:
+//           "Scope was too large and competed with tools creators already loved (Premiere, ScreenFlow). Scoped back to code and written content, with video as an embeddable asset — playing to our strengths rather than replicating established tools.",
+//       },
+//       {
+//         version: "V2",
+//         change: "Performance hints redesign",
+//         reason:
+//           "First version showed a persistent analytics panel that creators found distracting. Moved to an on-demand card triggered by a single icon — present when wanted, invisible when not.",
+//       },
+//       {
+//         version: "V3",
+//         change: "Added collaborative editing for team accounts",
+//         reason:
+//           "Several creator studios had co-authors and editors. Adding comment and suggestion mode on lesson blocks unlocked a new segment — small creator businesses with editorial workflows.",
+//       },
+//     ],
 
-    finalPrototype: [
-      "/Codecomedy.png",
-      "/Codecomedy.png",
-      "/Codecomedy.png",
-    ],
+//     finalPrototype: [],
 
-    usabilityResults: [
-      {
-        metric: "Lesson production time",
-        outcome: "Reduced from average 6.8 hours to 2.3 hours — a 3× improvement for the median creator",
-      },
-      {
-        metric: "Tool switching per lesson",
-        outcome: "From 7.3 average external tools to 1.8 — creators remained in-platform for 80% of their workflow",
-      },
-      {
-        metric: "Publish workflow time",
-        outcome: "Multi-channel publish reduced from 47 minutes average to 6 minutes with one-click publish",
-      },
-      {
-        metric: "Creator satisfaction (NPS)",
-        outcome: "Net Promoter Score increased from +18 to +71 after creator tools launch — highest in platform history",
-      },
-    ],
-  },
+//     usabilityResults: [
+//       {
+//         metric: "Lesson production time",
+//         outcome: "Reduced from average 6.8 hours to 2.3 hours — a 3× improvement for the median creator",
+//       },
+//       {
+//         metric: "Tool switching per lesson",
+//         outcome: "From 7.3 average external tools to 1.8 — creators remained in-platform for 80% of their workflow",
+//       },
+//       {
+//         metric: "Publish workflow time",
+//         outcome: "Multi-channel publish reduced from 47 minutes average to 6 minutes with one-click publish",
+//       },
+//       {
+//         metric: "Creator satisfaction (NPS)",
+//         outcome: "Net Promoter Score increased from +18 to +71 after creator tools launch — highest in platform history",
+//       },
+//     ],
+//   },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {
