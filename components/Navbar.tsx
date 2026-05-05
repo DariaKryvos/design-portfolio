@@ -40,7 +40,7 @@ export default function Navbar() {
         <Link
           href="/"
           aria-label="Daria Kryvosheieva — home"
-          className="text-sm font-semibold tracking-tight text-zinc-900 hover:text-zinc-600 transition-colors duration-200"
+          className="text-dm font-semibold tracking-tight text-zinc-900 hover:text-zinc-600 transition-colors duration-200"
         >
           Daria Kryvosheieva
         </Link>

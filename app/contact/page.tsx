@@ -1,129 +1,78 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description:
-    "Get in touch with Daria Kryvosheieva to discuss your UX/UI design project.",
-  alternates: {
-    canonical: "https://daria-ux.vercel.app/contact",
-  },
-  openGraph: {
-    url: "https://daria-ux.vercel.app/contact",
-  },
+  title: "Contact — Daria Kryvosheieva",
+  description: "Get in touch with Daria Kryvosheieva to discuss your UX/UI design project.",
+  alternates: { canonical: "https://daria-ux.vercel.app/contact" },
+  openGraph: { url: "https://daria-ux.vercel.app/contact" },
 };
 
 export default function ContactPage() {
   return (
     <div className="max-w-6xl mx-auto px-6 md:px-8">
-      <section aria-labelledby="contact-heading" className="pt-20 pb-16 md:pt-28 md:pb-24">
-        <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-6">
-            Contact
-          </p>
-          <h1
-            id="contact-heading"
-            className="text-4xl md:text-5xl font-semibold text-zinc-900 leading-[1.1] tracking-tight mb-6"
+      <section className="pt-20 md:pt-28 pb-24">
+
+        {/* Heading */}
+        <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-6">
+          Contact
+        </p>
+        <h1 className="text-5xl md:text-7xl font-semibold text-zinc-900 leading-[1.05] tracking-tight mb-16">
+          Let&apos;s talk<br />
+          <em className="not-italic text-zinc-400">about your project.</em>
+        </h1>
+
+        {/* All details in one compact block */}
+        <div className="border-t border-zinc-100">
+
+          {/* Email */}
+          <a
+            href="mailto:krivosheevadarya@gmail.com"
+            className="group flex items-center justify-between py-5 border-b border-zinc-100 hover:bg-zinc-50/60 -mx-2 px-2 rounded-lg transition-colors duration-200"
           >
-            Let&apos;s talk about your project.
-          </h1>
-          <p className="text-lg text-zinc-600 leading-relaxed">
-            I&apos;m currently available for new projects. Whether you have a
-            clear brief or just an interesting problem, I&apos;d love to hear
-            from you.
-          </p>
-        </div>
-      </section>
+            <div className="flex items-center gap-6">
+              <span className="text-xs font-semibold uppercase tracking-widest text-zinc-400 w-24 shrink-0">Email</span>
+              <span className="text-base font-medium text-zinc-900">krivosheevadarya@gmail.com</span>
+            </div>
+            <svg className="w-4 h-4 text-zinc-400 group-hover:text-zinc-900 group-hover:translate-x-0.5 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
 
-      <section className="pb-24" aria-label="Contact information and form">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
-          <div className="md:col-span-4">
-            <div className="space-y-8">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-3">
-                  Email
-                </p>
-                <a
-                  href="mailto:krivosheevadarya@gmail.com"
-                  className="text-md text-zinc-900 hover:text-zinc-600 transition-colors duration-200 break-all underline underline-offset-2 decoration-zinc-300 hover:decoration-zinc-600"
-                >
-                  krivosheevadarya@gmail.com
-                </a>
-              </div>
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/daria-kryvosheieva-3411a51ab/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-between py-5 border-b border-zinc-100 hover:bg-zinc-50/60 -mx-2 px-2 rounded-lg transition-colors duration-200"
+          >
+            <div className="flex items-center gap-6">
+              <span className="text-xs font-semibold uppercase tracking-widest text-zinc-400 w-24 shrink-0">LinkedIn</span>
+              <span className="text-base font-medium text-zinc-900">Daria Kryvosheieva</span>
+            </div>
+            <svg className="w-4 h-4 text-zinc-400 group-hover:text-zinc-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
 
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-3">
-                  Location
-                </p>
-                <p className="text-md text-zinc-600">
-                  Netherlands
-                  <br />
-                  Available for remote work worldwide
-                </p>
-              </div>
+          {/* Location */}
+          <div className="flex items-center justify-between py-5 border-b border-zinc-100">
+            <div className="flex items-center gap-6">
+              <span className="text-xs font-semibold uppercase tracking-widest text-zinc-400 w-24 shrink-0">Location</span>
+              <span className="text-base font-medium text-zinc-900">Netherlands · (Remote worldwide)</span>
+            </div>
+          </div>
 
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-3">
-                  Connect
-                </p>
-                <ul className="flex flex-col gap-2" role="list">
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/in/daria-kryvosheieva-3411a51ab/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="LinkedIn profile (opens in new tab)"
-                      className="text-md text-zinc-600 hover:text-zinc-900 transition-colors duration-200 inline-flex items-center gap-2"
-                    >
-                      LinkedIn
-                      <svg
-                        className="w-3 h-3"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                        focusable="false"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </a>
-                  </li>
-                  {/* <li>
-                    <a
-                      href="https://dribbble.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Dribbble profile (opens in new tab)"
-                      className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors duration-200 inline-flex items-center gap-2"
-                    >
-                      Dribbble
-                      <svg
-                        className="w-3 h-3"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                        focusable="false"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </a>
-                  </li> */}
-                </ul>
-              </div>
-
-              <div className="pt-2">
-                <div className="flex items-center gap-2">
-                  <div
-                    className="w-2 h-2 rounded-full bg-emerald-500"
-                    aria-hidden="true"
-                  />
-                  <p className="text-md text-zinc-600">
-                    Available for new projects
-                  </p>
-                </div>
+          {/* Availability */}
+          <div className="flex items-center justify-between py-5 border-b border-zinc-100">
+            <div className="flex items-center gap-6">
+              <span className="text-xs font-semibold uppercase tracking-widest text-zinc-400 w-24 shrink-0">Status</span>
+              <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                <span className="text-base font-medium text-zinc-900">Available for new projects</span>
               </div>
             </div>
           </div>
+
         </div>
       </section>
     </div>

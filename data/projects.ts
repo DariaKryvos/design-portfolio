@@ -234,7 +234,7 @@ export const projects: Project[] = [
     tags: ["Data Visualisation", "Gov Design", "Complex Data", "B2B"],
     role: "Senior UX Designer",
     tools: ["Figma", "Miro", "D3.js prototyping", "Optimal Workshop"],
-    timeline: "Sep 2024 – Feb 2025 (6 months)",
+    timeline: "June 2022 – Feb 2024 (1 year, 8 months)",
 
     problem:
       "Policy analysts at the Ministry of Health spent an average of 3.2 hours preparing data for weekly briefings — not because the data didn't exist, but because it was distributed across 11 disconnected systems. Decisions were being made on stale, incomplete information.",
@@ -398,7 +398,7 @@ export const projects: Project[] = [
     tags: ["Healthcare UX", "Accessibility", "Complex Systems", "Research"],
     role: "UX/UI Designer",
     tools: ["Figma", "FigJam", "UserZoom", "Axure"],
-    timeline: "Jun 2024 – Nov 2024 (6 months)",
+    timeline: "Feb 2022 – June 2022 (4 months)",
 
     problem:
       "Patients were cancelling 22% of appointments and frequently missed critical lab results, not due to disinterest, but because the portal's information architecture was designed around hospital departments — not patient journeys. The system made patients do the work of being their own care coordinator.",
@@ -561,7 +561,7 @@ export const projects: Project[] = [
     tags: ["Onboarding", "Retention", "Gamification", "Mobile-first"],
     role: "UX Designer",
     tools: ["Figma", "FullStory", "Amplitude", "Lottie"],
-    timeline: "Mar 2024 – Jun 2024 (4 months)",
+    timeline: "Feb 2017 – Sep 2019 (2 years, 7 months)",
 
     problem:
       "61% of new users abandoned the platform within the first 10 minutes. The product was technically strong, but the onboarding was a 12-step form designed for the team's internal understanding of the product — not for a new player's first experience. We were losing players before they'd had a single good moment.",
@@ -686,15 +686,12 @@ export const projects: Project[] = [
 
     finalPrototype: [
         "/ag00.jpg",
-        "/ag1.png",
         "/ag01.png",
         "/ag02.jpg",
-        "/ag2.png",
-        "/ag3.png",
-        "/ag4.png",
-        "/ag5.png",
-        "/ag6.png",
-      "/agaming.webp",
+        "/ag003.png",
+        "/ag002.png",
+        "/ag001.png",
+        "/agaming.webp",
     ],
 
     usabilityResults: [

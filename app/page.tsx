@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
+import HeroBubbles from "@/components/HeroBubbles";
 
 export const metadata: Metadata = {
   title: "Daria Kryvosheieva — UX/UI Designer",
@@ -56,25 +57,23 @@ export default function HomePage() {
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* HERO */}
         <section aria-labelledby="hero-heading" className="pt-20 pb-16 md:pt-28 md:pb-24">
-          <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-6">
-              UX/UI Designer
-            </p>
-            <h1
-              id="hero-heading"
-              className="text-4xl md:text-6xl font-semibold text-zinc-900 leading-[1.1] tracking-tight mb-8"
-            >
-              I design experiences that make complex things{" "}
-              <em className="not-italic text-zinc-500">feel simple.</em>
-            </h1>
-            <p className="text-lg text-zinc-600 leading-relaxed max-w-xl">
-              Seven years of UX practice across healthcare, government, and
-              consumer products. I research deeply, design with intention, and
-              always know why I made each decision.
-            </p>
-          </div>
+          <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-6">
+            UX/UI Designer
+          </p>
+          <h1
+            id="hero-heading"
+            className="text-4xl md:text-6xl font-semibold text-zinc-900 leading-[1.1] tracking-tight mb-8"
+          >
+            I design experiences that make complex things{" "}
+            <em className="not-italic text-zinc-500">feel simple.</em>
+          </h1>
+          <p className="text-lg text-zinc-600 leading-relaxed max-w-2xl mb-12">
+            Seven years of UX practice across healthcare, government, and
+            consumer products. I research deeply, design with intention, and
+            always know why I made each decision.
+          </p>
 
-          <div className="mt-12 flex flex-wrap items-center gap-6">
+          <div className="flex flex-wrap items-center gap-6 mb-16">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-emerald-500" aria-hidden="true" />
               <span className="text-sm text-zinc-600">Available for new projects</span>
@@ -82,6 +81,8 @@ export default function HomePage() {
             <div className="h-4 w-px bg-zinc-200 hidden md:block" aria-hidden="true" />
             <span className="text-sm text-zinc-600">Netherlands · Remote worldwide</span>
           </div>
+
+          <HeroBubbles />
         </section>
 
         {/* WORK GRID */}
