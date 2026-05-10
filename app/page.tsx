@@ -56,30 +56,29 @@ export default function HomePage() {
 
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* HERO */}
-        <section aria-labelledby="hero-heading" className="pt-20 pb-16 md:pt-28 md:pb-24">
-          <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-6">
-            UX/UI Designer
-          </p>
-          <h1
-            id="hero-heading"
-            className="text-4xl md:text-6xl font-semibold text-zinc-900 leading-[1.1] tracking-tight mb-8"
-          >
-            I design experiences that make complex things{" "}
-            <em className="not-italic text-zinc-500">feel simple.</em>
-          </h1>
-          <p className="text-lg text-zinc-600 leading-relaxed max-w-2xl mb-12">
-            Seven years of UX practice across healthcare, government, and
-            consumer products. I research deeply, design with intention, and
-            always know why I made each decision.
+        <section aria-labelledby="hero-heading" className="pt-16 pb-16 md:pt-24 md:pb-20">
+          <p className="text-xs text-zinc-400 tracking-widest uppercase mb-8">
+            UX/UI Designer · Portfolio 2026
           </p>
 
-          <div className="flex flex-wrap items-center gap-6 mb-16">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-emerald-500" aria-hidden="true" />
-              <span className="text-sm text-zinc-600">Available for new projects</span>
-            </div>
-            <div className="h-4 w-px bg-zinc-200 hidden md:block" aria-hidden="true" />
-            <span className="text-sm text-zinc-600">Netherlands · Remote worldwide</span>
+          <h1
+            id="hero-heading"
+            className="font-[family-name:var(--font-playfair)] font-bold leading-[1.08] tracking-tight mb-8"
+            style={{ fontSize: "clamp(2.2rem, 5.5vw, 6rem)" }}
+          >
+            <span className="text-zinc-800">Designing what </span>
+            <em style={{ color: "#2d1547" }}>complex </em>
+            <span className="text-zinc-800">systems </span>
+            <em className="text-zinc-400">should </em>
+            <span className="text-zinc-800">feel like.</span>
+          </h1>
+
+          <div className="flex flex-wrap items-center justify-between gap-4 max-w-2xl mb-12">
+            <p className="text-sm text-zinc-600 leading-relaxed">
+              Seven years across SaaS, eCommerce, games, dashboards, and public-sector systems.
+              Computer science background. <span className="text-zinc-900 font-medium">Open to work.</span>
+            </p>
+            <p className="text-xs text-zinc-500">Available · Netherlands</p>
           </div>
 
           <HeroBubbles />
@@ -87,24 +86,14 @@ export default function HomePage() {
 
         {/* WORK GRID */}
         <section aria-labelledby="work-heading" className="pb-24">
-          <div className="flex items-end justify-between mb-10">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-2">
-                Selected work
-              </p>
-              <h2 id="work-heading" className="text-2xl font-semibold text-zinc-900">
-                Case studies
-              </h2>
-            </div>
-            <span
-              className="text-sm text-zinc-600 hidden md:block"
-              aria-label={`${projects.length} projects`}
-            >
-              {projects.length} projects
-            </span>
+          <div className="flex items-center gap-3 mb-12">
+            <span className="text-xs text-zinc-400 tabular-nums">01</span>
+            <h2 id="work-heading" className="text-sm font-semibold text-zinc-900">Selected work</h2>
+            <div className="flex-1 border-t border-zinc-300" />
+            <span className="text-xs text-zinc-400">{projects.length} projects</span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-14">
             {projects.map((project, index) => (
               <ProjectCard key={project.slug} project={project} index={index} />
             ))}
@@ -112,7 +101,7 @@ export default function HomePage() {
         </section>
 
         {/* PROCESS */}
-        <section aria-labelledby="process-heading" className="border-t border-zinc-100 py-24">
+        {/* <section aria-labelledby="process-heading" className="border-t border-zinc-100 py-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">
@@ -146,7 +135,7 @@ export default function HomePage() {
               ))}
             </ul>
           </div>
-        </section>
+        </section> */}
       </div>
     </>
   );

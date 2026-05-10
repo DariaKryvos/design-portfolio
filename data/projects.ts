@@ -12,6 +12,7 @@ export interface IterationItem {
   version: string;
   change: string;
   reason: string;
+  shipped?: boolean;
 }
 
 export interface Project {
@@ -46,6 +47,12 @@ export interface Project {
     metric: string;
     outcome: string;
   }[];
+  highlight?: string;
+  summary: string;
+  metric: { label: string; value: string };
+  context: string;
+  approach: string[];
+  outcomePoints: string[];
 }
 
 export const projects: Project[] = [
@@ -54,14 +61,39 @@ export const projects: Project[] = [
     title: "ProRail Journey Planner",
     description:
       "Redesigning the railway disruption experience for 1.1 million daily commuters — turning chaos into clarity.",
-    image: "/prorail-flow.png", 
+    image: "/prorail-flow.png",
     tags: ["UX Research", "Service Design", "Mobile", "Accessibility"],
     role: "Lead UX Designer",
     tools: ["Figma", "Miro", "Maze", "Hotjar"],
     timeline: "Feb 2024 – July 2025 (1 year, 2 months)",
+    highlight: "1.1M users / day",
+
+    summary:
+      "ProRail's rail-traffic controllers manage live disruptions on the Dutch national network. A misread status there cascades into operational delay. I rebuilt the console around one canonical state per event, cutting the redundant codes and mental re-translation steps that had crept in over the years.",
+
+    metric: { label: "In context", value: "Up to 40% lower expected stress under load" },
 
     problem:
-      "When train disruptions occur, commuters receive fragmented, contradictory information across multiple channels — the app, platform screens, and staff announcements rarely align. During peak disruptions, up to 34% of passengers miss their alternative route. At the same time, traffic controllers were expected to oversee larger territories with fewer staff, creating a major operational challenge. This required faster decision-making, broader situational awareness, and increased attention to emerging incidents so disruptions could be prevented before escalating. The system also had a training challenge: educating new colleagues traditionally took up to two years before they were fully effective. By redesigning workflows, improving tools, and making knowledge more accessible, onboarding time could be reduced to just six months.",
+      "The console kept forcing controllers to re-translate every alarm before acting on it. The job was to cut that re-translation step without losing the operational nuance they actually use.",
+
+    context:
+      "Controllers run several concurrent incidents under time pressure from regional control rooms across the Dutch network. The legacy interface had grown by accretion: overlapping alarm streams, redundant status codes for the same operational state, and elements whose meaning shifted depending on which subsystem raised them. Controllers were mentally re-translating every event before acting, exactly when they had no spare attention to spend.",
+
+    approach: [
+      "Shadowed controllers in regional operations rooms during live and simulated incidents, marking every spot where the interface forced re-interpretation instead of helping the decision.",
+      "Rebuilt the information architecture around one canonical state per event. One state, one location on screen, one expected response.",
+      "Prototyped the patterns in Figma and tested them in moderated sessions under simulated incident load.",
+      "Ran workshops with controllers, engineers, and policy stakeholders to agree on shared definitions for alarms, statuses, and escalation thresholds, instead of leaving each team with its own.",
+      "Turned the patterns into a learning programme so the console's behaviour and the controller's mental model were taught from the same source.",
+    ],
+
+    outcomePoints: [
+      "Expected work-related stress dropped by up to 40%, mostly because controllers could now predict how the system would behave, not because there were fewer events on screen.",
+      "ProRail signed off on the underlying UX strategy for continued rollout.",
+      "The event-driven pattern library became the baseline for adjacent ProRail control-room tooling.",
+      "100+ controllers trained through the learning programme.",
+    ],
+
     problemDetails: [
       "Real-time data is presented without context — passengers see 'delayed 14 min' but don't know if their connection is affected.",
       "The alternative route flow required 7 taps to reach a decision — under stress, most users abandoned it entirely.",
@@ -118,8 +150,7 @@ export const projects: Project[] = [
 
     ideation: [
       {
-        description:
-          "Empathy Map",
+        description: "Empathy Map",
         image: "/EmpathyMap.png",
       },
       {
@@ -178,31 +209,33 @@ export const projects: Project[] = [
     iterations: [
       {
         version: "V1",
-        change: "Full-screen disruption overlay",
+        change: "One unified incident view, severity-tagged",
         reason:
-          "Users reported it felt alarming, like an emergency alert. Reduced to 80% screen height with visible context behind it — maintained urgency without panic.",
+          "First instinct: put every live incident on a single severity-sorted board so a controller could see the whole network at a glance. It tested badly on night shifts. With four or five concurrent events, the board read as a wall of red and the severity tag stopped doing work. Controllers were back to scanning region-by-region in their heads.",
+        shipped: false,
       },
       {
         version: "V2",
-        change: "Added estimated journey time comparison",
+        change: "Region-first split with severity as colour",
         reason:
-          "Users wanted to know 'how much longer will this take?' Added a simple +X min indicator. Testing showed this reduced anxiety — knowing the cost made the disruption manageable.",
+          "Split the canvas by regional control area and dropped severity to a colour cue. Region-level legibility came back, but cross-region correlation went away. Controllers missed the pattern when one incident was upstream of another, exactly the moment the console was supposed to help with.",
+        shipped: false,
       },
       {
         version: "V3",
-        change: "Removed 'all alternatives' secondary view",
+        change: "Severity-first IA with regional drill-down",
         reason:
-          "Second usability round showed that showing alternatives increased second-guessing. Users who only saw the recommended option arrived on time at a higher rate. We kept the option hidden behind a deliberate 'show more' action.",
+          "Settled on one canonical state per event, sorted by operational severity, with region as a drill-down rather than a partition. Cross-region correlation stayed visible at the top level; the wall-of-red effect went away because severity was paired with predicted action, not just colour. This is what shipped.",
+        shipped: true,
       },
     ],
 
     finalPrototype: [
-     
       "/ProRail1.png",
       "/ProRail2.png",
       "/ProRail3.png",
       "/ProRail4.png",
-       "/ProRail.svg",
+      "/ProRail.svg",
     ],
 
     usabilityResults: [
@@ -235,9 +268,34 @@ export const projects: Project[] = [
     role: "Senior UX Designer",
     tools: ["Figma", "Miro", "D3.js prototyping", "Optimal Workshop"],
     timeline: "June 2022 – Feb 2024 (1 year, 8 months)",
+    highlight: "40+ analysts",
+
+    summary:
+      "Forty-plus analysts at the Ministry of Health were each rebuilding the same briefing data from scratch every week. I designed a dashboard that made the recurring briefing automatic and the ad-hoc question fast — built around the one thing analysts needed before they would use any of it: visible provenance.",
+
+    metric: { label: "Weekly briefing prep", value: "3.2 hours → 45 minutes in pilot" },
 
     problem:
       "Policy analysts at the Ministry of Health spent an average of 3.2 hours preparing data for weekly briefings — not because the data didn't exist, but because it was distributed across 11 disconnected systems. Decisions were being made on stale, incomplete information.",
+
+    context:
+      "VWS policy analysts were pulling data from eleven disconnected ministry systems, exporting to Excel, and rebuilding charts each week — work duplicated across 40+ analysts. During the pandemic, this broke completely: policy questions changed daily, but the tooling could not adapt in time. The deeper problem was trust. Analysts would not act on data they could not interrogate. Source, methodology, and recency had to be visible before adoption was possible.",
+
+    approach: [
+      "Mapped the complete analyst workflow backwards from briefing templates — found 80% of data needs recurred weekly and could be made automatic.",
+      "Ran co-design workshops with 8 analysts to define the minimum viable briefing view — 6 charts appeared in over 90% of all briefings.",
+      "Designed data provenance into every chart: source, methodology, and last-updated timestamp visible by default, not buried in documentation.",
+      "Worked with domain experts to codify anomaly thresholds — making the dashboard's concern logic legible and contestable by analysts.",
+      "Added an annotation layer so context notes attached to data points, not documents, and carried through to exports.",
+    ],
+
+    outcomePoints: [
+      "Weekly briefing preparation time reduced from 3.2 hours to 45 minutes in beta testing with 8 analysts.",
+      "Anomaly detection agreement between analysts: 34% baseline → 91% with shared traffic-light thresholds.",
+      "Data trust score: 7.8/10 with provenance visible vs 4.2/10 without.",
+      "Analyst NPS of +62 after four-week pilot.",
+    ],
+
     problemDetails: [
       "No single view existed for cross-domain health indicators — COVID metrics, mental health waiting lists, GP capacity, and hospital bed availability all lived in separate ministry systems.",
       "Analysts were exporting to Excel, manually merging datasets, and building their own charts — work that was duplicated across 40+ analysts each week.",
@@ -347,18 +405,21 @@ export const projects: Project[] = [
         change: "All metrics shown by default",
         reason:
           "Cognitive overload in testing. Directors wanted a summary view; analysts wanted detail. Implemented role-based default views — same dashboard, different starting state.",
+        shipped: false,
       },
       {
         version: "V2",
         change: "Revised traffic-light thresholds",
         reason:
           "Domain experts contested the initial thresholds in review. Made threshold definitions visible and editable by data stewards — the dashboard's opinion could now be questioned and updated without a dev release.",
+        shipped: false,
       },
       {
         version: "V3",
         change: "Added 'briefing builder' mode",
         reason:
           "Analysts were still exporting to PowerPoint and re-building charts. Added a selection mode to pin charts to a briefing output — reducing post-export work by approximately 70%.",
+        shipped: true,
       },
     ],
 
@@ -399,9 +460,34 @@ export const projects: Project[] = [
     role: "UX/UI Designer",
     tools: ["Figma", "FigJam", "UserZoom", "Axure"],
     timeline: "Feb 2022 – June 2022 (4 months)",
+    highlight: "58% mobile usage",
+
+    summary:
+      "UMCG's patient portal was organised around hospital departments — not patient journeys. Patients managing a chronic condition had to navigate five separate areas to understand their own care. I restructured the portal around a single timeline and replaced clinical jargon with plain-language summaries.",
+
+    metric: { label: "Core task completion on mobile", value: "23% → 91%" },
 
     problem:
       "Patients were cancelling 22% of appointments and frequently missed critical lab results, not due to disinterest, but because the portal's information architecture was designed around hospital departments — not patient journeys. The system made patients do the work of being their own care coordinator.",
+
+    context:
+      "The portal served patients across every department of one of the Netherlands' largest university medical centres. Its information architecture reflected the hospital's internal structure — appointments, lab results, referrals, and messages all in separate silos. Patients were doing the work of being their own care coordinator. On top of that, 58% of usage happened on mobile against a desktop-only interface, and medical jargon throughout caused patients to disengage and call the hospital instead.",
+
+    approach: [
+      "Ran card sorting with 30 patients — 93% grouped information by journey stage, not by hospital department. This inverted our entire navigation model.",
+      "Mapped emotional peaks and valleys through the patient digital journey, identifying lab results as the highest-stress touchpoint.",
+      "Redesigned the home screen around a unified health timeline — surfacing the most urgent items first regardless of department.",
+      "Replaced clinical jargon with plain-language summaries as the default, with raw data available behind a 'View full results' toggle.",
+      "Designed a formal carer delegation system to replace the informal shared-login workaround used by 35% of elderly patients.",
+    ],
+
+    outcomePoints: [
+      "Appointment preparation task completion improved from 34% to 89%; average time reduced from 4.2 min to 58 seconds.",
+      "Lab result comprehension: patients who correctly interpreted their own results went from 31% to 84% with the plain-language layer.",
+      "Anxiety score for the results-viewing flow reduced from 3.8 to 2.1 (self-reported, 1–5 scale).",
+      "Core 5 flows on mobile: 23% → 91% completion after mobile-first redesign.",
+    ],
+
     problemDetails: [
       "Appointments, lab results, referrals, and messages lived in completely separate sections with no connective thread — a patient managing a chronic condition had to navigate 5+ areas to understand their own situation.",
       "Medical terminology was used throughout without explanation, creating anxiety and confusion for patients managing serious diagnoses.",
@@ -511,18 +597,21 @@ export const projects: Project[] = [
         change: "Plain language results summary only",
         reason:
           "Patients with medical backgrounds were frustrated by the removal of clinical data. Added progressive disclosure — plain language first, clinical data available but not default.",
+        shipped: false,
       },
       {
         version: "V2",
         change: "Revised appointment prep checklist",
         reason:
           "First version showed a generic checklist. Patients needed department-specific prep (radiology vs surgical consultation are very different). Made it dynamic based on appointment type.",
+        shipped: false,
       },
       {
         version: "V3",
         change: "Added 'last reviewed by doctor' timestamp to results",
         reason:
           "Critical: patients were anxious not knowing if their doctor had seen a result. Adding 'Dr. Smits reviewed this on 12 Jan' dramatically reduced follow-up calls and anxiety scores in testing.",
+        shipped: true,
       },
     ],
 
@@ -562,9 +651,34 @@ export const projects: Project[] = [
     role: "UX Designer",
     tools: ["Figma", "FullStory", "Amplitude", "Lottie"],
     timeline: "Feb 2017 – Sep 2019 (2 years, 7 months)",
+    highlight: "Consumer / B2C",
+
+    summary:
+      "61% of new users left AGaming within their first ten minutes. The onboarding was a 12-step form designed around the team's internal model of the product — not a player's first experience. I reduced it to three fields, led with value, and got players to their first match.",
+
+    metric: { label: "First-session completion", value: "39% → 94%" },
 
     problem:
       "61% of new users abandoned the platform within the first 10 minutes. The product was technically strong, but the onboarding was a 12-step form designed for the team's internal understanding of the product — not for a new player's first experience. We were losing players before they'd had a single good moment.",
+
+    context:
+      "AGaming was a competitive skill-based matchmaking platform entering a market where players already had Steam and Epic as defaults. New users arrived expecting to play. Instead, the product presented a 12-field configuration form — many fields collected for analytics with no downstream personalisation impact. Seven of twelve fields had no effect on the user experience at all. The platform's core differentiator was completely invisible throughout onboarding.",
+
+    approach: [
+      "Audited every onboarding field against its actual product use — found 7 of 12 had no downstream personalisation impact and were collected 'just in case.'",
+      "Used FullStory recordings and Amplitude funnel data to pinpoint drop-off to step 4: a checkbox screen with no context or payoff visible.",
+      "Designed a value proposition screen before any data collection — giving users a reason to complete setup before asking for anything.",
+      "Reduced required fields from 12 to 3: name and avatar, skill level, and a single match preference.",
+      "Added progressive disclosure — all other preferences collected through play behaviour rather than upfront self-report.",
+    ],
+
+    outcomePoints: [
+      "Onboarding completion rate: 39% → 94% after reducing to three required fields.",
+      "Time to first match reduced from 8.4 minutes to 2.1 minutes.",
+      "Day-1 retention for users who completed new onboarding: 71% vs 34% with the old flow.",
+      "Users who could articulate the platform's differentiator after onboarding: 9% → 78%.",
+    ],
+
     problemDetails: [
       "The onboarding collected 12 fields of data before users could do anything. Many fields were for analytics purposes only — not to improve the user experience.",
       "New users arrived expecting to play. Instead, they got a settings configuration wizard. The fun was 12 steps away.",
@@ -669,29 +783,32 @@ export const projects: Project[] = [
         change: "Play-first model (no setup)",
         reason:
           "Technically elegant but matchmaking quality was poor without even basic skill data. Players got badly mis-matched first games and churned from frustration. Reintroduced minimal required input (3 fields) before first match.",
+        shipped: false,
       },
       {
         version: "V2",
         change: "Avatar selection added",
         reason:
           "Identity expression early in onboarding increased emotional investment. Users who chose an avatar were 2.1× more likely to return the next day. Worth the one extra step.",
+        shipped: false,
       },
       {
         version: "V3",
         change: "Friend invite as final onboarding step",
         reason:
           "Social commitment device — users who invited a friend had a 4× higher 30-day retention rate. Made it feel like sharing excitement, not a referral programme. Optional but prominently featured.",
+        shipped: true,
       },
     ],
 
     finalPrototype: [
-        "/ag00.jpg",
-        "/ag01.png",
-        "/ag02.jpg",
-        "/ag003.png",
-        "/ag002.png",
-        "/ag001.png",
-        "/agaming.webp",
+      "/ag00.jpg",
+      "/ag01.png",
+      "/ag02.jpg",
+      "/ag003.png",
+      "/ag002.png",
+      "/ag001.png",
+      "/agaming.webp",
     ],
 
     usabilityResults: [

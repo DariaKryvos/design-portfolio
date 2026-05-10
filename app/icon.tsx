@@ -10,19 +10,21 @@ export default function Icon() {
         style={{
           width: 32,
           height: 32,
-          background: "#18181b",
-          borderRadius: 6,
+          background: "#2d1547",
+          borderRadius: 8,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           fontFamily: "sans-serif",
-          fontWeight: 700,
-          fontSize: 13,
+          fontWeight: 900,
+          fontSize: 22,
           color: "#ffffff",
-          letterSpacing: "-0.5px",
+          letterSpacing: "-1px",
+          gap: 1,
         }}
       >
-        DK
+        <span>D</span>
+        <span style={{ color: "#f97316" }}>.</span>
       </div>
     ),
     { ...size }

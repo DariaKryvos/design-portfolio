@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,6 +7,13 @@ import Footer from "@/components/Footer";
 const geist = Geist({
   subsets: ["latin"],
   variable: "--font-geist",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  weight: ["400", "700", "900"],
+  variable: "--font-playfair",
 });
 
 const BASE_URL = "https://daria-ux.vercel.app";
@@ -76,7 +83,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={geist.variable}>
+    <html lang="en" className={`${geist.variable} ${playfair.variable}`}>
       <body className="bg-gray-100 text-zinc-900 font-[family-name:var(--font-geist)] min-h-screen">
         <a href="#main-content" className="skip-link">
           Skip to main content
