@@ -1,3 +1,11 @@
+export interface ApproachSection {
+  number: string;
+  title: string;
+  body: string;
+  bullets?: string[];
+  closing?: string;
+}
+
 export interface IdeationItem {
   description: string;
   image?: string;
@@ -53,6 +61,16 @@ export interface Project {
   context: string;
   approach: string[];
   outcomePoints: string[];
+  // Rich optional fields for senior case studies
+  subtitle?: string;
+  roleTeam?: string;
+  roleConstraints?: string;
+  contextParagraphs?: string[];
+  problemIntro?: string;
+  problemBullets?: string[];
+  approachSections?: ApproachSection[];
+  leadership?: { intro: string; bullets: string[] };
+  impactStatement?: string;
 }
 
 export const projects: Project[] = [
@@ -85,13 +103,6 @@ export const projects: Project[] = [
       "Prototyped the patterns in Figma and tested them in moderated sessions under simulated incident load.",
       "Ran workshops with controllers, engineers, and policy stakeholders to agree on shared definitions for alarms, statuses, and escalation thresholds, instead of leaving each team with its own.",
       "Turned the patterns into a learning programme so the console's behaviour and the controller's mental model were taught from the same source.",
-    ],
-
-    outcomePoints: [
-      "Expected work-related stress dropped by up to 40%, mostly because controllers could now predict how the system would behave, not because there were fewer events on screen.",
-      "ProRail signed off on the underlying UX strategy for continued rollout.",
-      "The event-driven pattern library became the baseline for adjacent ProRail control-room tooling.",
-      "100+ controllers trained through the learning programme.",
     ],
 
     problemDetails: [
@@ -256,6 +267,95 @@ export const projects: Project[] = [
         outcome: "Post-task confidence rating improved from 2.8/5 to 4.4/5 across all user types",
       },
     ],
+
+    subtitle: "Reducing cognitive overload in railway operations control systems",
+    roleTeam: "1 junior UX designer (mentored by me), cross-functional collaboration with engineers and operations stakeholders",
+    roleConstraints: "Limited delivery timeline — project executed under tight deadlines",
+
+    contextParagraphs: [
+      "ProRail operates one of the most complex railway infrastructures in Europe, managing real-time train operations across the Netherlands.",
+      "The control centre staff were responsible for monitoring and reacting to live system data across multiple disconnected tools and dashboards.",
+      "Operators were expected to continuously track up to 12 separate screens simultaneously, which created severe cognitive overload in high-pressure situations.",
+      "At the same time, onboarding new employees was extremely slow and resource-intensive, taking up to 2 years before a new operator could fully work independently.",
+    ],
+
+    problemIntro: "The system suffered from four critical issues:",
+    problemBullets: [
+      "Cognitive overload: operators had to monitor 12 fragmented screens, leading to reduced focus and increased risk of missed critical events.",
+      "Fragmented tools: core applications were not connected, forcing users to switch context constantly.",
+      "Long onboarding time: complex system structure made training new employees inefficient and slow — up to 2 years.",
+      "Inefficient workload distribution: each operator was responsible for very narrow geographic areas, requiring a high number of staff per region.",
+    ],
+
+    approachSections: [
+      {
+        number: "1",
+        title: "System simplification through consolidation",
+        body: "I redesigned the interface architecture by consolidating multiple applications into three unified primary screens:",
+        bullets: [
+          "Screen 1: Core operational monitoring",
+          "Screen 2: Live system status and alerts",
+          "Screen 3: Supporting tools and secondary applications",
+        ],
+        closing: "This reduced the need to constantly switch attention across 12 fragmented systems.",
+      },
+      {
+        number: "2",
+        title: "Information hierarchy redesign",
+        body: "I introduced a clear visual hierarchy for critical vs. non-critical information:",
+        bullets: [
+          "High-priority events were visually highlighted in real time",
+          "Stable system states were visually de-emphasised",
+          "Attention-demanding alerts were surfaced contextually instead of continuously displayed",
+        ],
+        closing: "This allowed operators to shift between high-focus and low-focus states naturally, depending on system conditions.",
+      },
+      {
+        number: "3",
+        title: "Cognitive load reduction",
+        body: "The new design significantly reduced mental effort by:",
+        bullets: [
+          "Removing redundant UI elements",
+          "Grouping related actions into logical clusters",
+          "Reducing screen switching and context fragmentation",
+        ],
+      },
+      {
+        number: "4",
+        title: "Workflow optimisation across applications",
+        body: "I worked on integrating previously disconnected applications into a more unified workflow, reducing operational friction and improving task flow continuity.",
+      },
+      {
+        number: "5",
+        title: "Operational restructuring impact",
+        body: "The redesigned system enabled a shift in how workload was distributed:",
+        bullets: [
+          "Operators could now manage larger geographic regions instead of narrowly defined areas",
+          "This reduced the total number of staff required per region",
+          "Improved scalability of the control centre operations",
+        ],
+      },
+    ],
+
+    leadership: {
+      intro: "As Lead UX Designer, I was responsible for:",
+      bullets: [
+        "Defining UX strategy and system structure",
+        "Mentoring a junior UX designer and reviewing their work",
+        "Aligning stakeholders across operations and engineering teams",
+        "Prioritising requirements under strict time constraints",
+      ],
+    },
+
+    outcomePoints: [
+      "Training time reduced from 2 years to approximately 6 months.",
+      "Cognitive load for operators significantly decreased through interface consolidation.",
+      "Simultaneous system monitoring reduced from 12 screens to 3.",
+      "More efficient workforce allocation across regional operations.",
+      "Simplified daily workflows and improved system clarity.",
+    ],
+
+    impactStatement: "This project transformed a fragmented, high-complexity control environment into a structured, cognitively manageable operational system — improving both human performance and organisational efficiency.",
   },
 
   {

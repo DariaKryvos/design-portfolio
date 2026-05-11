@@ -3,6 +3,7 @@ import Script from "next/script";
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 import HeroBubbles from "@/components/HeroBubbles";
+import HeroVisual from "@/components/HeroVisual";
 
 export const metadata: Metadata = {
   title: "Daria Kryvosheieva — UX/UI Designer",
@@ -57,31 +58,52 @@ export default function HomePage() {
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* HERO */}
         <section aria-labelledby="hero-heading" className="pt-16 pb-16 md:pt-24 md:pb-20">
-          <p className="text-xs text-zinc-400 tracking-widest uppercase mb-8">
-            UX/UI Designer · Portfolio 2026
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_420px] gap-10 items-center">
 
-          <h1
-            id="hero-heading"
-            className="font-[family-name:var(--font-playfair)] font-bold leading-[1.08] tracking-tight mb-8"
-            style={{ fontSize: "clamp(2.2rem, 5.5vw, 6rem)" }}
-          >
-            <span className="text-zinc-800">Designing what </span>
-            <em style={{ color: "#2d1547" }}>complex </em>
-            <span className="text-zinc-800">systems </span>
-            <em className="text-zinc-400">should </em>
-            <span className="text-zinc-800">feel like.</span>
-          </h1>
+            {/* Left: text */}
+            <div>
+              {/* Name + availability */}
+              <div className="flex items-center justify-between mb-8 flex-wrap gap-3">
+                <p className="text-xs text-zinc-500 tracking-widest uppercase font-medium">
+                  Daria Kryvosheieva · Lead UX Designer · 7 years
+                </p>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" aria-hidden="true" />
+                  <span className="text-xs text-zinc-400">Open to work · Netherlands</span>
+                </div>
+              </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-4 max-w-2xl mb-12">
-            <p className="text-sm text-zinc-600 leading-relaxed">
-              Seven years across SaaS, eCommerce, games, dashboards, and public-sector systems.
-              Computer science background. <span className="text-zinc-900 font-medium">Open to work.</span>
-            </p>
-            <p className="text-xs text-zinc-500">Available · Netherlands</p>
+              {/* Heading */}
+              <h1
+                id="hero-heading"
+                className="font-[family-name:var(--font-playfair)] font-bold leading-[1.08] tracking-tight mb-8"
+                style={{ fontSize: "clamp(2.2rem, 4.5vw, 5rem)" }}
+              >
+                <span className="text-zinc-800">Designing what </span>
+                <em style={{ color: "#2d1547" }}>complex </em>
+                <span className="text-zinc-800">systems </span>
+                <em className="text-zinc-400">should </em>
+                <span className="text-zinc-800">feel like.</span>
+              </h1>
+
+              {/* Description */}
+              <p className="text-sm text-zinc-600 leading-relaxed mb-6 max-w-md">
+                Seven years designing for high-stakes environments — railway control rooms,
+                national health infrastructure, government policy systems. Computer science background,
+                currently Lead UX Designer at{" "}
+                <span className="text-zinc-800 font-medium">Sopra Steria</span>.
+                Open to senior IC or lead roles.
+              </p>
+
+            </div>
+
+            {/* Right: visual */}
+            <HeroVisual />
           </div>
 
-          <HeroBubbles />
+          <div className="mt-14">
+            <HeroBubbles />
+          </div>
         </section>
 
         {/* WORK GRID */}
