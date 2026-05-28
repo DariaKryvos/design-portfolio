@@ -232,6 +232,11 @@ export default function AboutPage() {
             delivery.
           </p>
           <p>
+            Prompt-engineering for image generation models (Midjourney, Stable Diffusion) — iterating on outputs systematically to reach production-quality visual assets.
+            AI-powered Figma plugins including Magician and Relume for accelerating ideation and component generation.
+            Experience creating and contributing to AI-assisted design systems and component libraries.
+          </p>
+          <p>
             English (professional), Dutch (working), Ukrainian (native), Russian
             (native).
           </p>

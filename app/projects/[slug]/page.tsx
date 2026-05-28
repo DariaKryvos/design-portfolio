@@ -272,7 +272,24 @@ export default async function ProjectPage({ params }: PageProps) {
           </section>
         )}
 
-        {/* 9. MORE SCREENS */}
+        {/* 9. VIDEO */}
+        {project.video && (
+          <section className="mb-16">
+            <SectionLabel text="Prototype Video" />
+            <h2 className="text-2xl font-bold text-zinc-900 mb-6">In action</h2>
+            <div className="rounded-xl overflow-hidden bg-zinc-950">
+              <video
+                src={project.video}
+                controls
+                playsInline
+                className="w-full"
+                style={{ maxHeight: "540px", objectFit: "contain" }}
+              />
+            </div>
+          </section>
+        )}
+
+        {/* 10. MORE SCREENS */}
         {project.finalPrototype.length > 0 && (
           <section className="mb-16">
             <SectionLabel text="Visuals" />

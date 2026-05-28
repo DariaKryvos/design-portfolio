@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Project } from "@/data/projects";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 interface ProjectCardProps {
   project: Project;
@@ -15,6 +15,24 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   );
   const hasSlides = slideImages.length > 1;
   const [current, setCurrent] = useState(0);
+  const [videoVisible, setVideoVisible] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  function handleMouseEnter() {
+    const vid = videoRef.current;
+    if (!project.video || !vid || vid.style.display === "none") return;
+    vid.src = project.video;
+    vid.play().then(() => setVideoVisible(true)).catch(() => {});
+  }
+
+  function handleMouseLeave() {
+    if (!project.video) return;
+    setVideoVisible(false);
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  }
 
   function prev(e: React.MouseEvent) {
     e.preventDefault();
@@ -36,7 +54,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       style={{ animationDelay: `${index * 100}ms` }}
     >
       {/* Image */}
-      <div className="aspect-[4/3] relative overflow-hidden rounded-2xl bg-zinc-100 mb-5">
+      <div
+        className="aspect-[4/3] relative overflow-hidden rounded-2xl bg-zinc-100 mb-5"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
 
         {/* Slide strip */}
         {slideImages.length > 0 ? (
@@ -111,6 +133,22 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               />
             ))}
           </div>
+        )}
+
+        {/* Video overlay — fades in on hover, only renders once file is available */}
+        {project.video && (
+          <video
+            ref={videoRef}
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300"
+            style={{ opacity: videoVisible ? 1 : 0 }}
+            onCanPlay={(e) => { (e.currentTarget as HTMLVideoElement).dataset.ready = "1"; }}
+            onError={(e) => { (e.currentTarget as HTMLVideoElement).style.display = "none"; }}
+          >
+            <source src={project.video} type="video/mp4" />
+          </video>
         )}
       </div>
 
