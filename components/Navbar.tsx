@@ -32,7 +32,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-zinc-100">
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b" style={{ backgroundColor: "rgba(37,12,53,0.92)", borderColor: "rgba(255,255,255,0.1)" }}>
       <nav
         aria-label="Main navigation"
         className="max-w-6xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between"
@@ -40,7 +40,7 @@ export default function Navbar() {
         <Link
           href="/"
           aria-label="Daria Kryvosheieva — home"
-          className="text-xl font-bold tracking-tight text-zinc-900 hover:text-zinc-600 transition-colors duration-200"
+          className="text-xl font-bold tracking-tight text-white hover:text-white/70 transition-colors duration-200"
         >
           Daria Kryvosheieva
         </Link>
@@ -53,8 +53,8 @@ export default function Navbar() {
                 aria-current={isActive(href) ? "page" : undefined}
                 className={`text-sm transition-colors duration-200 ${
                   isActive(href)
-                    ? "text-zinc-900 font-medium"
-                    : "text-zinc-600 hover:text-zinc-900"
+                    ? "text-white font-medium"
+                    : "text-white/60 hover:text-white"
                 }`}
               >
                 {label}
@@ -65,7 +65,7 @@ export default function Navbar() {
 
         <button
           ref={menuButtonRef}
-          className="md:hidden p-2 -mr-2 text-zinc-600 hover:text-zinc-900 transition-colors"
+          className="md:hidden p-2 -mr-2 text-white/70 hover:text-white transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={menuOpen}
@@ -99,7 +99,7 @@ export default function Navbar() {
         <div
           id="mobile-menu"
           ref={mobileMenuRef}
-          className="md:hidden bg-white border-t border-zinc-100 px-6 py-4"
+          className="md:hidden px-6 py-4 border-t" style={{ backgroundColor: "rgba(37,12,53,0.97)", borderColor: "rgba(255,255,255,0.1)" }}
         >
           <ul className="flex flex-col gap-4" role="list">
             {links.map(({ href, label }) => (
@@ -110,8 +110,8 @@ export default function Navbar() {
                   aria-current={isActive(href) ? "page" : undefined}
                   className={`block text-sm py-1 transition-colors duration-200 ${
                     isActive(href)
-                      ? "text-zinc-900 font-medium"
-                      : "text-zinc-600 hover:text-zinc-900"
+                      ? "text-white font-medium"
+                      : "text-white/60 hover:text-white"
                   }`}
                 >
                   {label}

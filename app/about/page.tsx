@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const sopraPlacements = [
   {
     period: "Apr 2024 — Jul 2025",
-    role: "Lead UX Researcher & Learning Experience Designer",
+    role: "UX Researcher & Learning Experience Designer",
     company: "ProRail · Utrecht, NL",
     bullets: [
       "Designed an event-driven UX system for rail-traffic controllers; reduced expected work-related stress by up to 40%.",

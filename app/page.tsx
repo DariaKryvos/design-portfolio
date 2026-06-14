@@ -55,21 +55,24 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
 
-      <div className="max-w-6xl mx-auto px-6 md:px-8">
-        {/* HERO */}
-        <section aria-labelledby="hero-heading" className="pt-16 pb-16 md:pt-24 md:pb-20">
+      {/* HERO — full-width purple banner */}
+      <section
+        aria-labelledby="hero-heading"
+        style={{ backgroundColor: "rgb(37 12 53)" }}
+      >
+        <div className="max-w-6xl mx-auto px-6 md:px-8 pt-24 pb-16 md:pt-28 md:pb-20">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_420px] gap-10 items-center">
 
             {/* Left: text */}
             <div>
               {/* Name + availability */}
               <div className="flex items-center justify-between mb-8 flex-wrap gap-3">
-                <p className="text-xs text-zinc-500 tracking-widest uppercase font-medium">
+                <p className="text-xs tracking-widest uppercase font-medium" style={{ color: "rgba(255,255,255,0.55)" }}>
                   Daria Kryvosheieva · Lead UX Designer · 7 years
                 </p>
                 <div className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" aria-hidden="true" />
-                  <span className="text-xs text-zinc-400">Open to work · Netherlands</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" aria-hidden="true" />
+                  <span className="text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>Open to work · Netherlands</span>
                 </div>
               </div>
 
@@ -79,35 +82,38 @@ export default function HomePage() {
                 className="font-[family-name:var(--font-playfair)] font-bold leading-[1.08] tracking-tight mb-8"
                 style={{ fontSize: "clamp(2.2rem, 4.5vw, 5rem)" }}
               >
-                <span className="text-zinc-800">Designing what </span>
-                <em style={{ color: "#2d1547" }}>complex </em>
-                <span className="text-zinc-800">systems </span>
-                <em className="text-zinc-400">should </em>
-                <span className="text-zinc-800">feel like.</span>
+                <span className="text-white">Designing what </span>
+                <em style={{ color: "#F5C842" }}>complex </em>
+                <span className="text-white">systems </span>
+                <em style={{ color: "rgba(255,255,255,0.38)" }}>should </em>
+                <span className="text-white">feel like.</span>
               </h1>
 
               {/* Description */}
-              <p className="text-sm text-zinc-600 leading-relaxed mb-6 max-w-md">
+              <p className="text-sm leading-relaxed mb-6 max-w-md" style={{ color: "rgba(255,255,255,0.70)" }}>
                 Seven years designing for high-stakes environments — railway control rooms,
                 national health infrastructure, government policy systems. Computer science background,
-                currently Lead UX Designer at{" "}
-                <span className="text-zinc-800 font-medium">Sopra Steria</span>.
+                currently UX Designer at{" "}
+                <span className="text-white font-medium">Sopra Steria</span>.
                 Open to senior IC or lead roles.
               </p>
-
             </div>
 
             {/* Right: visual */}
             <HeroVisual />
           </div>
+        </div>
+      </section>
 
-          <div className="mt-14">
-            <HeroBubbles />
-          </div>
-        </section>
+      {/* Logo bar + work grid — white background */}
+      <div className="max-w-6xl mx-auto px-6 md:px-8">
+
+        <div className="pt-14 pb-6">
+          <HeroBubbles />
+        </div>
 
         {/* WORK GRID */}
-        <section aria-labelledby="work-heading" className="pb-24">
+        <section aria-labelledby="work-heading" className="pb-24 pt-4">
           <div className="flex items-center gap-3 mb-12">
             <span className="text-xs text-zinc-400 tabular-nums">01</span>
             <h2 id="work-heading" className="text-sm font-semibold text-zinc-900">Selected work</h2>
@@ -121,43 +127,6 @@ export default function HomePage() {
             ))}
           </div>
         </section>
-
-        {/* PROCESS */}
-        {/* <section aria-labelledby="process-heading" className="border-t border-zinc-100 py-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">
-                How I work
-              </p>
-              <h2
-                id="process-heading"
-                className="text-3xl font-semibold text-zinc-900 leading-tight mb-6"
-              >
-                Research first. Always.
-              </h2>
-              <p className="text-zinc-600 leading-relaxed">
-                Good design isn&apos;t about beautiful pixels — it&apos;s about
-                understanding the problem so deeply that the solution becomes
-                obvious. Every decision I make is grounded in evidence, and I
-                keep the reasoning visible throughout the design process.
-              </p>
-            </div>
-
-            <ul className="grid grid-cols-2 gap-4" role="list">
-              {[
-                { label: "User Research", detail: "Interviews, surveys, field studies" },
-                { label: "Systems Thinking", detail: "IA, service design, complex flows" },
-                { label: "Interaction Design", detail: "Prototyping, micro-interactions" },
-                { label: "Usability Testing", detail: "Moderated, unmoderated, A/B" },
-              ].map(({ label, detail }) => (
-                <li key={label} className="p-5 rounded-xl bg-zinc-50 border border-zinc-100">
-                  <p className="text-sm font-semibold text-zinc-900 mb-1">{label}</p>
-                  <p className="text-xs text-zinc-600 leading-relaxed">{detail}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section> */}
       </div>
     </>
   );

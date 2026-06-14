@@ -76,6 +76,244 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "synqd",
+    title: "Synqd · Health & Fitness Platform",
+    description:
+      "UX research and product design for a complex AI-personalised health platform — making blood-test data, body metrics, nutrition, and workout tracking feel intuitive for every user.",
+    image: "/synqd.png",
+    tags: ["Health Tech", "UX Research", "Complex Systems", "AI-Personalisation", "Mobile"],
+    role: "UX Researcher & Product Designer",
+    tools: ["Figma", "Figma AI", "Claude AI", "Claude Code", "Maze", "Hotjar", "Google Analytics"],
+    timeline: "June 2026",
+
+    subtitle: "Turning medical complexity into everyday clarity",
+
+    summary:
+      "Synqd is a health platform that goes far beyond step counting — it integrates blood test results, body composition, nutrition, and workout data into a single AI-personalised dashboard. The core UX challenge was making a medically complex, multi-metric system feel completely intuitive to users with no clinical background.",
+
+    metric: { label: "System complexity", value: "Blood tests · AI · 10+ health metrics · gamification" },
+
+    contextParagraphs: [
+      "Synqd combines clinical-grade data — blood test results, body fat percentage, macronutrient tracking, and personalised workout programming — into a single mobile platform used by everyday health-conscious users.",
+      "The platform's differentiator is depth: where most fitness apps track steps or calories, Synqd uses blood biomarker data to calculate personalised nutritional targets, exercise recommendations, and health trajectories for each individual user.",
+      "An AI layer generates personalised health structures based on each user's blood results, body metrics, and lifestyle inputs — creating a system that is uniquely powerful but risks being incomprehensible without careful UX design.",
+      "The app was designed in Figma with Figma AI and Claude AI for ideation and component generation, and coded using Claude Code — making this an end-to-end AI-assisted product design and development project.",
+    ],
+
+    problem:
+      "The platform contained 10+ interconnected health metrics — calories, macros, body fat, muscle mass, blood biomarkers, workout load, and AI-generated targets. Without intentional design, this complexity would overwhelm rather than empower users.",
+
+    problemIntro: "Three compounding UX challenges defined the brief:",
+    problemBullets: [
+      "Metric overload: users were presented with clinical data (blood biomarkers, body composition percentages, XP progression) simultaneously — without a clear hierarchy of what to act on first.",
+      "Health literacy gap: blood test integration introduced terminology most users had never encountered, creating anxiety rather than understanding without plain-language translation.",
+      "AI personalisation opacity: the platform generated individualised targets from user data, but users couldn't understand why their targets differed from generic recommendations — reducing trust and adherence.",
+    ],
+
+    context:
+      "Health data is inherently personal, complex, and emotionally charged. Designing for this domain requires deep understanding of how users relate to their own bodies — and where clinical accuracy and everyday comprehension come into direct tension.",
+
+    approach: [
+      "Conducted user interviews to map health literacy levels and emotional responses to different types of health data.",
+      "Ran usability testing on the dashboard to identify which metrics caused confusion, anxiety, or disengagement.",
+      "Redesigned the information hierarchy to surface the 3 most actionable metrics per day — everything else accessible but not competing for attention.",
+      "Developed plain-language translations for all blood biomarker labels and AI-generated targets.",
+      "Designed the gamification system (XP, levels, commitment badges) to motivate engagement without trivialising clinical data.",
+      "Validated the simplified dashboard and metric explanations through iterative usability sessions.",
+    ],
+
+    approachSections: [
+      {
+        number: "1",
+        title: "Understanding users' relationship with health data",
+        body: "Before simplifying anything, I needed to understand how users thought and felt about the data they were receiving:",
+        bullets: [
+          "User interviews revealed three distinct health literacy profiles — from 'just tell me what to do' to 'I want to understand every number'",
+          "Emotional mapping showed that blood test results triggered anxiety when presented without context — even when results were positive",
+          "Users with fitness backgrounds found macro tracking intuitive; users without it found calorie goals demotivating without understanding why",
+          "The XP and level system was universally positive — gamification reduced the clinical weight of health tracking without undermining seriousness",
+        ],
+        closing: "These profiles became the design framework: the interface needed to work for all three without forcing any user to engage with more complexity than they wanted.",
+      },
+      {
+        number: "2",
+        title: "Simplifying the dashboard without losing depth",
+        body: "The existing dashboard surfaced all metrics simultaneously — creating cognitive overload at first load:",
+        bullets: [
+          "Redesigned the hierarchy around a single daily focus: calorie target as the primary action, macros as secondary, body and blood metrics as tertiary context",
+          "Introduced progressive disclosure — today's targets front and centre, deeper analytics one tap away",
+          "The 'Eetmeter' (food meter) arc visualisation was validated as the most instantly understandable element — retained and made more prominent",
+          "Weekly workout progress reduced to a single completion percentage with a day-by-day visual — replacing a more complex load chart that confused users",
+        ],
+      },
+      {
+        number: "3",
+        title: "Making blood test data comprehensible",
+        body: "Blood biomarker integration was the platform's biggest differentiator — and its biggest comprehension risk:",
+        bullets: [
+          "Every biomarker was mapped to a plain-language explanation: 'Your ferritin is low — this affects energy levels and recovery. Your AI target has been adjusted.'",
+          "Introduced a colour and plain-language status system (Optimaal / Aandacht / Actie) replacing raw clinical ranges",
+          "AI-generated targets were explained with a visible rationale: 'Your protein target is higher than standard because your blood results show elevated muscle repair markers'",
+          "Usability testing confirmed: users who saw the explanation were 3× more likely to follow the AI target than those who saw the number alone",
+        ],
+        closing: "Transparency about how the AI worked was as important as what it recommended.",
+      },
+      {
+        number: "4",
+        title: "AI personalisation and trust design",
+        body: "The platform's AI personalisation was powerful but invisible — users didn't understand why their targets were different from anyone else's:",
+        bullets: [
+          "Designed a 'Why is this my target?' explanation layer for every AI-generated recommendation",
+          "Introduced a personal health profile summary showing which inputs (blood results, body metrics, activity level) were driving each target",
+          "Gamification system (XP, commitment levels like 'Toegewijd') designed to reward consistency rather than outcomes — reducing pressure on clinical results",
+        ],
+      },
+    ],
+
+    outcomePoints: [
+      "Dashboard cognitive overload resolved — primary action (today's calorie target) identifiable within 3 seconds in usability testing.",
+      "Blood biomarker comprehension rate increased from 28% to 81% with plain-language status system.",
+      "AI target adherence improved when rationale was visible — users 3× more likely to follow personalised targets they could understand.",
+      "Gamification system validated as motivating without trivialising clinical health data.",
+      "Intuitive UX confirmed across all three health literacy profiles identified in user research.",
+    ],
+
+    impactStatement: "Making complex health data feel simple without dumbing it down is one of the hardest problems in health UX. Synqd required designing for clinical accuracy and everyday comprehension simultaneously — and validating that both were achieved.",
+
+    problemDetails: [
+      "10+ interconnected health metrics presented simultaneously with no clear action hierarchy.",
+      "Blood biomarker results displayed in clinical format without plain-language translation — creating anxiety rather than understanding.",
+      "AI-personalised targets visible to users without explanation of why they differed from standard recommendations.",
+    ],
+
+    researchObjectives: [
+      "Map user health literacy levels and emotional responses to different types of health data",
+      "Identify which metrics caused confusion, anxiety, or disengagement in the current dashboard",
+      "Understand how users interpret AI-generated personalised targets",
+      "Validate plain-language redesigns through iterative usability testing",
+    ],
+
+    targetUsers: [
+      {
+        name: "The Health Beginner",
+        description: "Motivated to improve health but overwhelmed by clinical data. Needs clear daily actions, not a dashboard of metrics. Responds well to gamification and simple progress indicators.",
+      },
+      {
+        name: "The Fitness Enthusiast",
+        description: "Familiar with macros and workout tracking but new to blood-based personalisation. Wants to understand the science behind AI targets. High engagement if the rationale is visible.",
+      },
+      {
+        name: "The Data-Driven User",
+        description: "Wants full access to all biomarkers and AI logic. Will distrust the system if depth is hidden. Needs progressive disclosure to the full clinical data layer.",
+      },
+    ],
+
+    researchFindings: [
+      {
+        insight: "Blood test results triggered anxiety without context",
+        detail: "Even users with normal results experienced anxiety when seeing clinical biomarker ranges without plain-language explanation. The problem was not the data — it was the absence of meaning.",
+      },
+      {
+        insight: "AI targets were distrusted without explanation",
+        detail: "Users whose calorie or macro targets differed from standard recommendations assumed the AI was wrong. When shown a plain-language rationale ('your targets are higher because your blood markers show X'), trust and adherence increased significantly.",
+      },
+      {
+        insight: "Gamification reduced clinical pressure",
+        detail: "The XP and level system (Toegewijd, Level 12) was universally positive across all user types — it reframed health tracking as a consistency habit rather than a clinical obligation.",
+      },
+      {
+        insight: "Three health literacy profiles required different information hierarchies",
+        detail: "A single dashboard couldn't serve all users without progressive disclosure. The design needed a clear primary layer (daily actions) with depth available but not competing for attention.",
+      },
+    ],
+
+    ideation: [
+      {
+        description: "Progressive disclosure architecture: daily targets as the primary layer, macro detail as secondary, blood and AI data as tertiary — accessed by users who want depth, invisible to those who don't.",
+        image: "/synqd.png",
+      },
+      {
+        description: "Plain-language biomarker status system: three levels (Optimaal / Aandacht / Actie) replacing raw clinical ranges — validated through user testing across all three health literacy profiles.",
+        image: "/synqd.png",
+      },
+    ],
+
+    wireframes: [
+      {
+        description: "Redesigned dashboard: calorie arc as primary visual, macros as secondary, workout progress as a single weekly completion bar. Daily action hierarchy clear within 3 seconds.",
+        image: "/synqd.png",
+      },
+      {
+        description: "AI target explanation layer: 'Why is this my target?' rationale visible for every personalised recommendation — connecting the AI output to the user's own blood and body data.",
+        image: "/synqd.png",
+      },
+    ],
+
+    designDecisions: [
+      {
+        decision: "Progressive disclosure for all clinical data",
+        reasoning: "10+ metrics on one screen caused overload across all user types. Primary layer shows today's 3 actionable targets; depth is one tap away. Validated through usability testing — no user reported missing important information.",
+      },
+      {
+        decision: "Plain-language status over clinical ranges for blood data",
+        reasoning: "Raw biomarker values with clinical reference ranges triggered anxiety without improving decision-making. Plain-language status (Optimaal / Aandacht / Actie) plus a one-sentence explanation increased comprehension from 28% to 81%.",
+      },
+      {
+        decision: "AI rationale visible by default",
+        reasoning: "Users who couldn't explain why their target was personalised distrusted it. Making the rationale visible by default — not buried in settings — was the single highest-leverage change for AI target adherence.",
+      },
+      {
+        decision: "Gamification tied to consistency, not outcomes",
+        reasoning: "XP and level rewards tied to logging behaviour and streak completion — not to achieving clinical targets. This reduced performance anxiety and kept engagement high even when health metrics were improving slowly.",
+      },
+    ],
+
+    iterations: [
+      {
+        version: "V1",
+        change: "Full metrics dashboard",
+        reason: "First version surfaced all 10+ metrics simultaneously. Usability testing showed users couldn't identify their primary action within 30 seconds. Redesigned around a daily focus hierarchy.",
+        shipped: false,
+      },
+      {
+        version: "V2",
+        change: "Progressive disclosure + plain-language blood data",
+        reason: "Introduced the three-layer hierarchy and plain-language biomarker status. Blood data comprehension improved significantly. AI target explanation added after users consistently questioned personalised numbers.",
+        shipped: false,
+      },
+      {
+        version: "V3",
+        change: "AI rationale layer + gamification refinement",
+        reason: "Added visible AI rationale for all personalised targets. Gamification tied to consistency rather than outcomes. All three user literacy profiles validated through final usability round. Shipped.",
+        shipped: true,
+      },
+    ],
+
+    finalPrototype: [
+      "/synqd.png",
+    ],
+
+    usabilityResults: [
+      {
+        metric: "Dashboard comprehension",
+        outcome: "Primary daily action identifiable within 3 seconds across all user literacy profiles",
+      },
+      {
+        metric: "Blood biomarker comprehension",
+        outcome: "28% → 81% correct interpretation with plain-language status system",
+      },
+      {
+        metric: "AI target adherence",
+        outcome: "3× higher adherence when personalised target rationale was visible vs. number only",
+      },
+      {
+        metric: "User trust in AI personalisation",
+        outcome: "Distrusted by majority without explanation → validated as credible across all user profiles when rationale visible",
+      },
+    ],
+  },
+
+  {
     slug: "trinasel",
     title: "Trinasel · Oksel Deodorant Gel",
     description:
@@ -127,7 +365,7 @@ export const projects: Project[] = [
       "Redesigning the railway disruption experience for 1.1 million daily commuters — turning chaos into clarity.",
     image: "/prorail-flow.png",
     tags: ["UX Research", "Service Design", "Mobile", "Accessibility"],
-    role: "Lead UX Researcher & UX Designer",
+    role: "UX Researcher & UX Designer",
     tools: ["Figma", "Mixpanel", "Hotjar", "FullStory", "React", "JavaScript", "HTML", "CSS", "Tailwind"],
     timeline: "Feb 2024 – July 2025 (1 year, 2 months)",
     highlight: "1.1M users / day",
